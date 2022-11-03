@@ -366,7 +366,7 @@ img {
 .mobile-menu__link {
     display: block;
     padding-bottom: 32px;
-    font-size: 26px;
+    font-size: 20px;
     color: var(--white-color);
 }
 
