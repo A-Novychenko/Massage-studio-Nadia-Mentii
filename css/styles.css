@@ -150,7 +150,27 @@ img {
     text-align: center;
 }
 
-.logo.logo_desktop {
+.logo.logo_desktop {}
+
+@media screen and (max-width: 420px) {
+    .logo.logo_desktop {
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 421px and max-width: 768px) {
+    .logo.logo_desktop {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 450px) {
+    .header__space_hidden {
+        display: none;
+    }
+}
+
+/* .logo.logo_desktop {
     display: none;
 }
 
@@ -158,7 +178,7 @@ img {
     .logo.logo_desktop {
         display: block;
     }
-}
+} */
 
 .logo:hover {
     color: var(--white-color);
