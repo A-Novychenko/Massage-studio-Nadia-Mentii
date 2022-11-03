@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=0.3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/img/nm-favicon.png" type="image/png">
     <title>nm_masasgekiev</title>
 
@@ -21,7 +21,8 @@
     <!-- ============  header ================= -->
     <header class="header-page">
         <div class="container header-container">
-            <a href="./index.html" class="logo link">Cтудія масажу<br>Надії Ментій</a>
+            <a href="./index.html" class="logo logo_desktop link">Cтудія масажу<br>Надії Ментій</a>
+            <a href="./index.html" class="logo link">НМ</a>
             <nav class="header-nav">
                 <ul class="header-list list">
                     <li class="header-item">
@@ -73,7 +74,67 @@
                     </li>
                 </ul>
             </div>
+            <button type="button" class="burger-menu js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="burger-menu__icon">
+                    <use href="./img/sprite.svg#icon-paragraph-justify"></use>
+                </svg>
+            </button>
         </div>
+
+        <!-- //////////////////////////     MOB-MENU    ///////////////////////////////// -->
+        <div class="mobile-menu js-menu-container" id="mobile-menu">
+            <div class="container mobile-menu__container">
+                <button type="button" class="mobile-menu__burger-close js-close-menu">
+                    <svg class="mobile-menu__icon">
+                        <use href="./img/sprite.svg#icon-cross"></use>
+                    </svg>
+                </button>
+                <div class="mobile__nav">
+                    <ul class="mobile-menu__nav listt">
+                        <li class="mobile-menu__item">
+                            <a href="./index.html" class="mobile-menu__link link mobile-menu__link_active">Головна</a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a href="#sessions" class="mobile-menu__link link">Сеанси</a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a href="#reviews" class="mobile-menu__link link">Відгуки</a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a href="#contacts" class="mobile-menu__link link">Контакти</a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a href="./news.html" class="mobile-menu__link link">Новини</a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a href="./q-and-a.html" class="mobile-menu__link link">Питання - Відповідь</a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a href="./about-me.html" class="mobile-menu__link link">Про мене</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mobile-menu__wrapper">
+                    <div class="mobile-menu__contacts-item">
+                        <a href="tel:+380631772223" class="mobile-menu__phone link">
+                            <svg class="header-icon smartphone-icon" width="16" height="16">
+                                <use href="./img/sprite.svg#icon-smartphone"></use>
+                            </svg>
+                            063-177-22-23</a>
+                    </div>
+                    <div class="mobile-menu__contacts-item">
+
+                        <a href="" class="mobile-menu__social-link link">
+                            <svg class="header-icon smartphone-icon" width="16" height="16">
+                                <use href="./img/sprite.svg#icon-viber"></use>
+                            </svg>Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //////////////////////////   / MOB-MENU    ///////////////////////////////// -->
+
     </header>
     <!-- ============  /header ================= -->
     <main>
@@ -325,6 +386,7 @@
             </div>
         </div>
     </footer>
+    <script src="./js/mobile-menu.js"></script>
 </body>
 
 </html>
