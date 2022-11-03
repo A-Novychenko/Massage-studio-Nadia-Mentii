@@ -640,13 +640,19 @@ img {
     margin-right: auto;
     margin-left: auto;
     table-layout: fixed;
-    width: 70%;
+
     border-collapse: collapse;
 
 }
 
+@media screen and (min-width: 768px) {
+    .cost-list {
+        width: 70%;
+    }
+}
+
 .cost-descr:nth-child(1) {
-    width: 80%;
+    width: 60%;
 }
 
 .cost-item,
