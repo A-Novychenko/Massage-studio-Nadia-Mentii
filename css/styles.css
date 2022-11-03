@@ -198,7 +198,7 @@ img {
     display: none;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
     .header-nav {
         display: block;
         margin-right: auto;
@@ -282,6 +282,12 @@ img {
     height: 40px;
 
     fill: var(--white-color);
+}
+
+@media screen and (max-width: 1199px) {
+    .tab_hidden {
+        display: none;
+    }
 }
 
 /* //////////////////  MOB MENU  ////////////////////// */
@@ -621,18 +627,33 @@ img {
 
 
 /*===========ABOUT==========*/
+.about-list {
+    margin-right: auto;
+    margin-left: auto;
+}
 
-@media screen and (min-width: 768px) {
+.about__img {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media screen and (min-width: 1200px) {
     .about-item {
         display: flex;
     }
 }
 
 .about-item:not(:last-child) {
-    margin-bottom: 30px;
+    margin-bottom: 80px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
+    .about-item:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
     .about-item:nth-child(2n) {
         flex-direction: row-reverse;
     }
@@ -683,6 +704,14 @@ img {
     background-color: rgba(33, 150, 243, 0.2);
 }
 
+.cost-time {
+    text-align: center;
+}
+
+.cost-item {
+    text-align: center;
+}
+
 /*===========/COST==========*/
 
 /*===========FOOTER==========*/
@@ -694,32 +723,47 @@ img {
 @media screen and (min-width: 768px) {
     .footer-page {
         display: flex;
-        column-gap: 30px;
-        /* padding-top: 50px;
-        padding-bottom: 50px; */
+        justify-content: space-around;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .footer-page {
+        margin: 0;
     }
 }
 
 .googl-map {
-    max-width: 100%;
+    width: 100%;
+    max-width: 432px;
     height: 150px;
     border-radius: 10px;
 
     display: block;
-    margin-right: auto;
-    margin-left: auto;
+
 }
 
 @media screen and (max-width: 767px) {
     .googl-map {
         margin-bottom: 20px;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
 
 @media screen and (min-width: 768px) {
     .googl-map {
         max-width: 100%;
-        width: 600px;
+        width: 350px;
+        height: 450px;
+        border-radius: 10px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .googl-map {
+        max-width: 100%;
+        width: 800px;
         height: 450px;
         border-radius: 10px;
     }
@@ -740,7 +784,7 @@ img {
         flex-direction: column;
         align-items: center;
 
-        width: 30%;
+        max-width: 100%;
         height: 450px;
         padding: 20px;
 
@@ -778,6 +822,7 @@ img {
         display: flex;
         margin-bottom: 15px;
         align-items: center;
+        text-align: left;
     }
 }
 
