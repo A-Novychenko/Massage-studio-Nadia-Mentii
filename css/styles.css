@@ -152,8 +152,10 @@ img {
 
 .logo.logo_desktop {
     display: none;
+}
 
-    @media screen and (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
+    .logo.logo_desktop {
         display: block;
     }
 }
@@ -185,13 +187,14 @@ img {
 
 .header-nav {
     display: none;
+}
 
-    @media screen and (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
+    .header-nav {
         display: block;
         margin-right: auto;
         margin-left: auto;
     }
-
 }
 
 .header-list {
@@ -464,13 +467,16 @@ img {
         url("../img/massazh-fon.jpg");
     background-size: cover;
     background-position: right;
+}
 
-    @media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
+    .hero-page {
         background-position: center;
     }
-
-
 }
+
+
+
 
 .hero-title {
     max-width: 800px;
@@ -517,17 +523,26 @@ img {
     padding-top: 100px;
 }
 
-.sessions-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-    justify-content: center;
+@media screen and (min-width: 768px) {
+    .sessions-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        justify-content: center;
+    }
 }
+
 
 .sessions-item {
     flex-basis: calc((100% - 100px) / 3);
     background-color: rgba(117, 117, 117, .4);
     border-radius: 10px;
+}
+
+@media screen and (max-width: 767px) {
+    .sessions-item:not(:last-child) {
+        margin-bottom: 20px;
+    }
 }
 
 .sessions-img {
@@ -549,16 +564,31 @@ img {
 
 /*===========REVIEWS==========*/
 .reviews-list {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    column-gap: 30px;
+    column-gap: 30px; */
     margin-bottom: 8px;
+}
+
+@media screen and (min-width: 768px) {
+    .reviews-list {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 30px;
+
+    }
 }
 
 .reviews-item {
     padding: 15px;
     border-radius: 10px;
     background-color: rgba(117, 117, 117, .4);
+}
+
+@media screen and (max-width: 767px) {
+    .reviews-item:not(:last-child) {
+        margin-bottom: 20px;
+    }
 }
 
 .reviews-name {
@@ -576,17 +606,23 @@ img {
 
 
 /*===========ABOUT==========*/
-.about-item {
-    display: flex;
+
+@media screen and (min-width: 768px) {
+    .about-item {
+        display: flex;
+    }
 }
 
 .about-item:not(:last-child) {
     margin-bottom: 30px;
 }
 
-.about-item:nth-child(2n) {
-    flex-direction: row-reverse;
+@media screen and (min-width: 768px) {
+    .about-item:nth-child(2n) {
+        flex-direction: row-reverse;
+    }
 }
+
 
 .about-text {
     padding: 20px;
