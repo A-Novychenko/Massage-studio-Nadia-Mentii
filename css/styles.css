@@ -169,16 +169,6 @@ img {
     }
 }
 
-/* .logo.logo_desktop {
-    display: none;
-}
-
-@media screen and (min-width: 1200px) {
-    .logo.logo_desktop {
-        display: block;
-    }
-} */
-
 .logo:hover {
     color: var(--white-color);
 }
@@ -376,7 +366,7 @@ img {
 .mobile-menu__link {
     display: block;
     padding-bottom: 32px;
-    font-size: 40px;
+    font-size: 26px;
     color: var(--white-color);
 }
 
