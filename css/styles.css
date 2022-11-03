@@ -150,16 +150,15 @@ img {
     text-align: center;
 }
 
-.logo.logo_desktop {}
 
 @media screen and (max-width: 420px) {
-    .logo.logo_desktop {
+    .logo {
         font-size: 10px;
     }
 }
 
-@media screen and (min-width: 421px and max-width: 768px) {
-    .logo.logo_desktop {
+@media screen and (min-width: 421px) and (max-width: 768px) {
+    .logo {
         font-size: 18px;
     }
 }
