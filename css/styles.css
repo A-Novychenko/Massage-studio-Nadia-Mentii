@@ -870,34 +870,62 @@ img {
 ////////////////////////////////// */
 
 /*===========ABOUT-ME==========*/
-.about-me-content {
-    display: flex;
-    column-gap: 50px;
+
+@media screen and (min-width: 768px) {
+    .about-me-content {
+        display: flex;
+        column-gap: 50px;
+    }
 }
 
 .about-me-title {
     padding-top: 15px;
     padding-bottom: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .about-me-title {
+        margin-bottom: 50px;
+
+    }
 }
 
 .about-me-text {
     max-width: 648px;
 }
 
-.certificate-list {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 30px;
+
+
+@media screen and (min-width: 768px) {
+    .certificate-list {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 30px;
+    }
 }
 
-.certificate-item {
-    display: flex;
-    width: 30%;
-    align-items: center;
+@media screen and (max-width: 767px) {
+    .about-me-photo {
+        margin-bottom: 30px;
+    }
+}
 
-    background-color: rgba(117, 117, 117, .4);
+@media screen and (max-width: 767px) {
+    .certificate-item:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .certificate-item {
+        display: flex;
+        width: 30%;
+        align-items: center;
+
+        background-color: rgba(117, 117, 117, .4);
+    }
 }
 
 
