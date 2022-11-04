@@ -928,6 +928,9 @@ img {
     }
 }
 
+.news-time {
+    color: var(--white-color);
+}
 
 @media screen and (max-width: 767px) {
     .news-time {
