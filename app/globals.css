@@ -1,3 +1,5 @@
+@import "node_modules/modern-normalize/modern-normalize.css";
+
 :root {
   /* title */
   --primary-color: #212121;
@@ -44,6 +46,11 @@ ol {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 img {
@@ -96,4 +103,18 @@ img {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   margin: -1px;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #2196F3;
+  border-radius: 20px;
+  border: 1px solid #f3f021;
 }

@@ -1,169 +1,17 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
+import {BannerSection} from "@/components/sections/Banner/BannerSection";
+import {SessionsSection} from "@/components/sections/Sessions/Sessions";
+import {ReviewsSection} from "@/components/sections/Reviews/Reviews";
+
 export default function Home() {
   return (
     <main>
-      {/* <!-- ============  hero ================= --> */}
-      <section className="hero-page">
-        <h1 className="hero-title">Оздоровчі та лікувальні масажі</h1>
-        <a
-          className="btn primary btn-hero link"
-          href="https://t.me/Mentiy_Nadiya"
-          target="_blank"
-          rel="noopener"
-        >
-          Записатись на сеанс
-        </a>
-        <a
-          className="btn primary btn-hero link consalt"
-          href="https://t.me/Mentiy_Nadiya"
-          target="_blank"
-          rel="noopener"
-        >
-          Отримати консультацію
-        </a>
-      </section>
-      {/* <!-- ============  /hero ================= --> */}
+      <BannerSection />
 
-      {/* <!-- ============  sessions ================= --> */}
-      <section className="sessions-page section" id="sessions">
-        <div className="container">
-          <h2 className="sessions-title title">сеанси</h2>
-          <ul className="sessions-list list">
-            <li className="sessions-item">
-              {/* <Image
-                src="./img/massage-spyny.jpg"
-                alt=""
-                className="sessions-img"
-                width={280}
-                height={280}
-              /> */}
-              <h3 className="sessions-title-item">Лікувальний масаж спини</h3>
-            </li>
-            <li className="sessions-item">
-              {/* <Image
-                src="./img/likuvalnyi-massage.jpg"
-                alt=""
-                className="sessions-img"
-                width={280}
-                height={280}
-              /> */}
-              <h3 className="sessions-title-item">Оздоровчий масаж</h3>
-            </li>
-            <li className="sessions-item">
-              {/* <Image
-                src="./img/likuvalnyi-massage-obluchcha.jpg"
-                alt=""
-                className="sessions-img"
-                width={280}
-                height={280}
-              /> */}
-              <h3 className="sessions-title-item">Масаж обличчя</h3>
-            </li>
-            <li className="sessions-item">
-              {/* <Image
-                src="./img/massage-stop.jpg"
-                alt=""
-                className="sessions-img"
-                width={280}
-                height={280}
-              /> */}
-              <h3 className="sessions-title-item">Масаж стоп</h3>
-            </li>
-            <li className="sessions-item">
-              {/* <Image
-                src="./img/massage-ruk.jpg"
-                alt=""
-                className="sessions-img"
-                width={280}
-                height={280}
-              /> */}
-              <h3 className="sessions-title-item">Масаж рук</h3>
-            </li>
-            <li className="sessions-item">
-              {/* <Image
-                src="./img/massage-g55aa961e4.jpg"
-                alt=""
-                className="sessions-img"
-                width={280}
-                height={280}
-              /> */}
-              <h3 className="sessions-title-item">Антицелюлітний масаж</h3>
-            </li>
-          </ul>
-        </div>
-      </section>
-      {/* <!-- ============  /sessions ================= --> */}
-
-      {/* <!-- ============  reviews ================= --> */}
-      <section className="reviews-page section" id="reviews">
-        <div className="container">
-          <h2 className="reviews-title title">відгуки</h2>
-          <ul className="reviews-list list">
-            {/* <!-- <li className="reviews-item">
-                        <p className="reviews-name">Name Name</p>
-                        <p className="reviews-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-                            culpa modi illo nesciunt corporis ab praesentium aspernatur nisi! Deleniti nemo voluptatum
-                            quaerat nisi id atque hic quasi doloremque, quas vel veritatis commodi laboriosam beatae
-                            animi labore impedit. Cupiditate quam, nihil atque eos a dolore, corporis error commodi,
-                            fugiat optio eum!</p>
-                    </li>
-                    <li className="reviews-item">
-                        <p className="reviews-name">Name Name</p>
-                        <p className="reviews-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-                            culpa modi illo nesciunt corporis ab praesentium aspernatur nisi! Deleniti nemo voluptatum
-                            quaerat nisi id atque hic quasi doloremque, quas vel veritatis commodi laboriosam beatae
-                            animi labore impedit. Cupiditate quam, nihil atque eos a dolore, corporis error commodi,
-                            fugiat optio eum!</p>
-                    </li>
-                    <li className="reviews-item">
-                        <p className="reviews-name">Name Name</p>
-                        <p className="reviews-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-                            culpa modi illo nesciunt corporis ab praesentium aspernatur nisi! Deleniti nemo voluptatum
-                            quaerat nisi id atque hic quasi doloremque, quas vel veritatis commodi laboriosam beatae
-                            animi labore impedit. Cupiditate quam, nihil atque eos a dolore, corporis error commodi,
-                            fugiat optio eum!</p>
-                    </li> --> */}
-            <li className="sessions-item">
-              {/* <Image
-                src="./img/vidguk1.jpg"
-                alt="review"
-                className="sessions-img"
-                width={280}
-                height={280}
-              /> */}
-            </li>
-            <li className="sessions-item">
-              {/* <Image
-                src="./img/vidguk2.jpg"
-                alt="review"
-                className="sessions-img"
-                width={280}
-                height={280}
-              /> */}
-            </li>
-            <li className="sessions-item">
-              {/* <Image
-                src="./img/vidguk3.jpg"
-                alt="review"
-                className="sessions-img"
-                width={280}
-                height={280}
-              /> */}
-            </li>
-          </ul>
-          <a
-            href="https://www.instagram.com/stories/highlights/17955379342752520/"
-            className="reviews-link link"
-            target="_blank"
-          >
-            більше відгуків в <b className="instagram-logo">Instagram</b>
-          </a>
-        </div>
-      </section>
-      {/* <!-- ============  /reviews ================= --> */}
-
+      <SessionsSection />
+      <ReviewsSection />
       {/* <!-- ============  about ================= --> */}
       <section className="about-page section">
         <div className="container">
@@ -205,7 +53,6 @@ export default function Home() {
         </div>
       </section>
       {/* <!-- ============  /about ================= --> */}
-
       {/* <!-- ============  cost ================= --> */}
       <section className="about-page section">
         <div className="container">
