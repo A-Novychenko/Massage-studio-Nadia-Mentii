@@ -9,9 +9,11 @@ export const BannerSection = async () => {
   const slides = data?.data;
 
   return (
-    <div className="container">
-      <h1 className="visually-hidden">Cтудія масажу Надії Ментій</h1>
-      <BannerSwiper slides={slides} />
-    </div>
+    <section style={{marginTop: 50, marginBottom: 50}}>
+      <div className="container">
+        <h1 className="visually-hidden">Cтудія масажу Надії Ментій</h1>
+        <BannerSwiper slides={slides} />
+      </div>
+    </section>
   );
 };

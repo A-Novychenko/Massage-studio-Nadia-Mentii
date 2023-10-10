@@ -2,6 +2,7 @@ import {HeaderSection} from "@/components/sections/Header/Header";
 import "./globals.css";
 import type {Metadata} from "next";
 import {Roboto} from "next/font/google";
+import {FooterSection} from "@/components/sections/Footer/Footer";
 
 const roboto = Roboto({
   subsets: ["latin", "cyrillic"],
@@ -20,6 +21,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body className={roboto.className}>
         <HeaderSection />
         {children}
+        <FooterSection />
       </body>
     </html>
   );

@@ -13,7 +13,9 @@ export const AddComment = () => {
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     console.log(data);
 
-    const fixData = {...data, grade: Number(data.grade)};
+    const fixData = {data};
+
+    // const fixData = {...data, grade: Number(data.grade)};
 
     console.log("fixData", fixData);
 

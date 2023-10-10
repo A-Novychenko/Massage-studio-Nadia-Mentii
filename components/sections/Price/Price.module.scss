@@ -1,0 +1,56 @@
+.section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.title {
+  padding-bottom: 60px;
+
+  font-size: 28px;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--white-color);
+}
+
+.list {
+  margin-right: auto;
+  margin-left: auto;
+  table-layout: fixed;
+
+  border-collapse: collapse;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (min-width: 768px) {
+    width: 70%;
+  }
+}
+
+.item {
+  text-align: center;
+  padding: 20px;
+
+  &:nth-child(odd) {
+    background-color: var(--white-transparent-color);
+  }
+
+  &:nth-child(even) {
+    background-color: rgba(33, 150, 243, 0.2);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color);
+  }
+}
+
+.service {
+  &:nth-child(1) {
+    width: 60%;
+  }
+  padding: 20px;
+}
+
+.duration {
+  text-align: center;
+}

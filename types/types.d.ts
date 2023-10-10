@@ -26,3 +26,21 @@ type CommentAttributes = {
   updatedAt: string;
   publishedAt: string;
 };
+
+type AboutMassageAttributes = {
+  subtitle: string;
+  text: string;
+  img: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+};
+
+type PriceAttributes = {
+  service: string;
+  price: string;
+  duration: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+};
