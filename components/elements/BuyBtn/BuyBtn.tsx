@@ -2,14 +2,27 @@
 
 import {MdBorderColor} from "react-icons/md";
 
+import {usePriceModal} from "@/components/Providers/PriceModalProvider";
+
 import styles from "./BuyBtn.module.scss";
 
-export const BuyBtn = () => {
+export const BuyBtn = ({attributes}: {attributes: PriceAttributes}) => {
+  const {isOpen, toggleModal, setData} = usePriceModal();
+
   return (
-    <button type="button" className={styles.button}>
-      <MdBorderColor />
-      <br />
-      <span>Записатись</span>
-    </button>
+    <div className={styles.wrap}>
+      <button
+        type="button"
+        className={styles.button}
+        onClick={() => {
+          toggleModal(true);
+          setData(attributes);
+        }}
+      >
+        <MdBorderColor />
+        <br />
+        <span>Записатись</span>
+      </button>
+    </div>
   );
 };

@@ -1,6 +1,7 @@
 .section {
   padding-top: 50px;
   padding-bottom: 50px;
+  background-color: rgba(51, 15, 179, 0.1);
 }
 
 .title {
@@ -22,16 +23,21 @@
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   @media screen and (min-width: 768px) {
-    width: 70%;
+    // width: 70%;
+    width: 100%;
+    max-width: 1248px;
   }
 }
 
 .item {
   text-align: center;
   padding: 20px;
+  font-size: 20px;
+  font-weight: 600;
 
   &:nth-child(odd) {
-    background-color: var(--white-transparent-color);
+    // background-color: var(--white-transparent-color);
+    background-color: #575757;
   }
 
   &:nth-child(even) {
@@ -48,9 +54,11 @@
   &:nth-child(1) {
     width: 60%;
   }
-  padding: 20px;
 }
 
 .duration {
   text-align: center;
+}
+.price {
+  padding: 30px;
 }

@@ -25,6 +25,11 @@
   &:not(:last-child) {
     margin-bottom: 80px;
   }
+
+  &:nth-child(2n) .link_more {
+    justify-content: flex-start;
+  }
+
   @media screen and (min-width: 1200px) {
     display: flex;
 
@@ -44,9 +49,6 @@
 }
 
 .img {
-  //   margin-right: auto;
-  //   margin-left: auto;
-
   display: block;
   height: 100%;
   width: 100%;
@@ -57,8 +59,26 @@
 .text {
   padding: 20px;
   width: 1000px;
+  font-size: 20px;
+}
+.text_not_img {
+  padding: 20px;
+  width: 100%;
+  font-size: 20px;
 }
 
 .subtitle {
   margin-bottom: 20px;
+}
+
+.link_more {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 40px;
+}
+.link_more_text {
+  color: var(--accent-color);
+  font-size: 20px;
+  padding-right: 8px;
 }

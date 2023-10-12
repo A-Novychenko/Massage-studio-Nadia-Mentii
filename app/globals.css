@@ -1,11 +1,14 @@
 @import "node_modules/modern-normalize/modern-normalize.css";
 
 :root {
+  --main-color: #162831;
+
   /* title */
   --primary-color: #212121;
   /* paragraph */
   --secondary-color: #757575;
   --accent-color: #2196F3;
+  --accent-color-hf: #007add;
   /* logo  */
   --black-color: #000000;
   /* logo-footer, hero, main-bgc */
@@ -17,6 +20,8 @@
   /* footer-bgc*/
   --bgc-footer: #2F303A;
   /* !!! variable names are not ideal. replace if necessary */
+
+  --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 

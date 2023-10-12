@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import {BsArrowUpRight} from "react-icons/bs";
 
 import styles from "./AboutMassage.module.scss";
 
@@ -6,7 +8,12 @@ export const AboutMassageSection = async () => {
   const res = await fetch("http://127.0.0.1:1337/api/about-massages");
   const {data} = await res.json();
 
-  //   console.log("data", data);
+  const hendleText = (text: string) => {
+    if (text.length > 420) {
+      return text.slice(0, 400) + " ...";
+    }
+    return text;
+  };
 
   return (
     <section className={styles.section}>
@@ -33,14 +40,19 @@ export const AboutMassageSection = async () => {
                           alt={subtitle}
                           width={1200}
                           height={600}
-                          //   width={648}
-                          //   height={300}
                         />
                       </div>
                     )}
-                    <div className={styles.text}>
+                    <div className={img ? styles.text : styles.text_not_img}>
                       <h3 className={styles.subtitle}>{subtitle}</h3>
-                      <p className={styles.descr}>{text}</p>
+                      <p className={styles.descr}>{hendleText(text)}</p>
+
+                      <Link className={styles.link_more} href="">
+                        <span className={styles.link_more_text}>
+                          прочитати більше
+                        </span>
+                        <BsArrowUpRight size={16} color="#2196F3" />
+                      </Link>
                     </div>
                   </li>
                 );

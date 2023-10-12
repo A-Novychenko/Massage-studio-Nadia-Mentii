@@ -44,3 +44,29 @@ type PriceAttributes = {
   updatedAt: string;
   publishedAt: string;
 };
+
+type CloseModalProps = {
+  closeModal: () => void;
+};
+
+interface IFormInput {
+  name: string;
+  phone: string;
+  comment: string;
+}
+
+type InputsBuySessionForm = {
+  phone: string;
+  name: string;
+};
+
+type BunnerModalProps = {
+  isOpen: boolean;
+  closeModal: () => void;
+};
+
+type PriceFormProps = {
+  service: string;
+  price: string;
+  duration: string;
+};
