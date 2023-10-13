@@ -70,3 +70,14 @@ type PriceFormProps = {
   price: string;
   duration: string;
 };
+
+type NewsAttributes = {
+  title: string;
+  long_descr: string;
+  short_descr: string;
+  img_small: string;
+  img_big: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+};
