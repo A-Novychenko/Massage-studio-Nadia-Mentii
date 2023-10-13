@@ -26,8 +26,10 @@ export default async function NewsDetailPage({
   return (
     <div className="container">
       <h1>{title}</h1>
+
       <Image src={img_big} alt={title} width={1200} height={800} />
       <p>{long_descr}</p>
+      <p>{createdAt}</p>
     </div>
   );
 }
