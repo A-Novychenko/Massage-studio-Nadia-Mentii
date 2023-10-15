@@ -12,9 +12,13 @@ export default function Home() {
   return (
     <main>
       <BannerSection />
+
       <SessionsSection />
+
       <ReviewsSection />
+
       <AboutMassageSection />
+
       <PriceModalProvider>
         <PriceSection />
       </PriceModalProvider>
