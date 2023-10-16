@@ -1,4 +1,5 @@
 import {NextRequest, NextResponse} from "next/server";
+import clientPromise from "@/services/mongoDB";
 
 export const GET = async () => {
   const res = await fetch("http://127.0.0.1:1337/api/slides/", {
@@ -13,22 +14,15 @@ export const GET = async () => {
   return NextResponse.json({status: 200, data});
 };
 
-// import {NextResponse} from "next/server";
+export const POST = async (req: Request, res: Response) => {
+  const client = await clientPromise;
+  const db = client.db("db-site-content");
 
-// export async function GET() {
-//   const res = await fetch(
-//     "https://6403b8063bdc59fa8f2bad68.mockapi.io/gallery",
-//     {
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       mode: "no-cors",
-//     }
-//   );
-//   const data = await res.json();
+  const data = await res.json();
 
-//   return NextResponse.json({
-//     status: 200,
-//     data,
-//   });
-// }
+  const {insertedId} = await db.collection("slides").insertOne(data);
+
+  const post = await db.collection("slides").findOne(insertedId);
+
+  return NextResponse.json({status: 201, data: post});
+};
