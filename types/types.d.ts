@@ -1,12 +1,7 @@
 type BannerData = {
-  id: number;
-  attributes: {
-    title: string;
-    createdAt: string;
-    updatedAt: string;
-    publishedAt: string;
-    img: string;
-  };
+  _id: string;
+  title: string;
+  imgLink: string;
 }[];
 
 type SessionsAttributes = {

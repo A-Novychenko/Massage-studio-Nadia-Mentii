@@ -1,7 +1,11 @@
 "use client";
+
+import {useState} from "react";
+import Image from "next/image";
+import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation, Pagination, Scrollbar, A11y} from "swiper/modules";
 
-import {Swiper, SwiperSlide} from "swiper/react";
+import {BannerModal} from "../Modals/BannerModal/BannerModal";
 
 // Import Swiper styles
 import "swiper/css";
@@ -9,12 +13,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-import Image from "next/image";
-
 import styles from "./swiper.module.scss";
-import Link from "next/link";
-import {BannerModal} from "../Modals/BannerModal/BannerModal";
-import {useState} from "react";
 
 export const BannerSwiper = ({slides}: {slides: BannerData}) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,13 +39,12 @@ export const BannerSwiper = ({slides}: {slides: BannerData}) => {
         onSlideChange={() => console.log("slide change")}
       >
         {slides &&
-          slides.map(({attributes, id}) => {
-            const {title, img} = attributes;
+          slides.map(({_id, title, imgLink}) => {
             return (
-              <SwiperSlide key={id}>
+              <SwiperSlide key={_id}>
                 <div className={styles.slide_wrap}>
                   <Image
-                    src={img}
+                    src={imgLink}
                     alt={title}
                     width={1296}
                     height={600}
