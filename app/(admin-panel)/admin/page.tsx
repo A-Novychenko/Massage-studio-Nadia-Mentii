@@ -1,3 +1,4 @@
+import {AdminSession} from "./components/sections/Session/Session";
 import {AdminSlidesSection} from "./components/sections/Slides/Slides";
 
 export default function AdminPage() {
@@ -16,6 +17,7 @@ export default function AdminPage() {
         </h1>
       </div>
       <AdminSlidesSection />
+      <AdminSession />
     </>
   );
 }

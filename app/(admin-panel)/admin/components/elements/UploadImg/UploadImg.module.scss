@@ -1,0 +1,57 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  padding-bottom: 40px;
+  padding-right: 32px;
+  padding-left: 32px;
+}
+
+.label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.label_text {
+  font-size: 20px;
+}
+.label_icon {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.upload_btn {
+  margin-top: 12px;
+  padding: 8px;
+
+  background-color: #636363;
+  border: none;
+  border-radius: 8px;
+
+  font-size: 20px;
+  color: #3a3a3a;
+}
+
+.upload_btn_active {
+  margin-top: 12px;
+  padding: 8px;
+
+  border: none;
+  border-radius: 8px;
+  background-color: var(--accent-color);
+
+  font-size: 20px;
+  color: #fff;
+
+  cursor: pointer;
+
+  transition: background-color var(--animation);
+
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color-hf);
+  }
+}

@@ -2,6 +2,9 @@
 
 import React, {useState} from "react";
 import {useForm, Controller} from "react-hook-form";
+import {BsUpload} from "react-icons/bs";
+
+import styles from "./UploadImg.module.scss";
 
 type FormData = {
   file: FileList;
@@ -68,19 +71,46 @@ export const AdminUploadImg = ({setImgLink}: AdminUploadImgProps) => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} style={{display: "flex"}}>
+    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <label>Виберіть файл:</label>
-        <Controller
-          name="file"
-          control={control}
-          defaultValue={undefined}
-          render={({field: {onChange}}) => (
-            <InputFile onChange={handleOnChange} ref={inputRef} />
-          )}
-        />
+        <label className={styles.label}>
+          <span className={styles.label_icon}>
+            <BsUpload
+              size={20}
+              color={typeof file === "undefined" ? "#ffffff" : "#00e41e"}
+            />
+          </span>
+          <span
+            className={styles.label_text}
+            style={{color: typeof file === "undefined" ? "#ffffff" : "#00e41e"}}
+          >
+            {typeof file === "undefined" ? "Виберіть файл " : file.name}
+          </span>
+
+          <div className="visually-hidden">
+            <Controller
+              name="file"
+              control={control}
+              defaultValue={undefined}
+              render={({field: {onChange}}) => (
+                <InputFile onChange={handleOnChange} ref={inputRef} />
+              )}
+            />
+          </div>
+        </label>
       </div>
-      <button type="submit">Завантажити</button>
+
+      <button
+        disabled={typeof file === "undefined"}
+        className={
+          typeof file === "undefined"
+            ? styles.upload_btn
+            : styles.upload_btn_active
+        }
+        type="submit"
+      >
+        Згенерувати посилання
+      </button>
     </form>
   );
 };

@@ -33,9 +33,7 @@ export const SessionsSection = async () => {
                         height={280}
                         className={styles.img}
                       />
-                      <h3 className={styles.subtitle}>
-                        Лікувальний масаж спини
-                      </h3>
+                      <h3 className={styles.subtitle}>{title}</h3>
                       <div className={styles.overlay}>
                         <p className={styles.descr}>{description}</p>
                       </div>

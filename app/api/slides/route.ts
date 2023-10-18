@@ -7,7 +7,7 @@ export const GET = async () => {
 
   const data = await db.collection("slides").find().toArray();
 
-  return NextResponse.json({status: 201, data});
+  return NextResponse.json({status: 200, data});
 };
 
 export const POST = async (req: Request, res: Response) => {

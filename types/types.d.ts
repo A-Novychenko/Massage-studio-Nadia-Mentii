@@ -4,12 +4,25 @@ type BannerData = {
   imgLink: string;
 }[];
 
+type AdminBannerData = {
+  _id: string;
+  title: string;
+  imgLink: string;
+};
+
 type SessionsAttributes = {
   img: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
   title: string;
+  description: string;
+};
+
+type SessionsData = {
+  _id: string;
+  title: string;
+  imgLink: string;
   description: string;
 };
 
