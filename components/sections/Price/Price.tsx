@@ -6,6 +6,7 @@ export const PriceSection = async () => {
   // const res = await fetch("http://localhost:3000/api/prices/");
   // Novik
   const res = await fetch(`${process.env.BASE_HOST}/api/prices`);
+  // const res = await fetch(`/api/prices`);
 
   const {data} = await res.json();
 

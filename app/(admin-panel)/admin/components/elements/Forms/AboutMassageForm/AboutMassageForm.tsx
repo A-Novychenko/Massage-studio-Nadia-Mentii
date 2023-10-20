@@ -27,7 +27,8 @@ export const AdminAboutMassageForm = () => {
     console.log(data);
 
     try {
-      const res = await fetch("api/about-massages", {
+      const res = await fetch(`${process.env.BASE_HOST}api/about-massages`, {
+        // const res = await fetch("api/about-massages", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -7,6 +7,7 @@ export const AdminAboutMassageList = async () => {
   // const res = await fetch("http://localhost:3000/api/about-massages/");
   // Novik
   const res = await fetch(`${process.env.BASE_HOST}/api/about-massages`);
+  // const res = await fetch(`/api/about-massages`);
   const {data} = await res.json();
 
   return (

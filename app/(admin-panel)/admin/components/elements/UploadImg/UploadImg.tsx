@@ -39,10 +39,14 @@ export const AdminUploadImg = ({setImgLink}: AdminUploadImgProps) => {
     formData.append("file", file);
 
     try {
-      const response = await fetch("/api/upload-cloudinary", {
-        method: "POST",
-        body: formData,
-      });
+      // const response = await fetch("/api/upload-cloudinary", {
+      const response = await fetch(
+        `${process.env.BASE_HOST}/api/upload-cloudinary`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (response.ok) {
         const {results} = await response.json();

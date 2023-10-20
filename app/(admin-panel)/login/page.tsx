@@ -1,3 +1,3 @@
 export default function LoginPage() {
-  return <>Login form</>;
+  return <h2>Login form</h2>;
 }

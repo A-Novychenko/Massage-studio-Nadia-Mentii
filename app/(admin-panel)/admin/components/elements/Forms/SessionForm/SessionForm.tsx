@@ -27,7 +27,8 @@ export const AdminSessionForm = () => {
     console.log(data);
 
     try {
-      const res = await fetch("api/sessions", {
+      const res = await fetch(`${process.env.BASE_HOST}api/sessions`, {
+        // const res = await fetch("api/sessions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

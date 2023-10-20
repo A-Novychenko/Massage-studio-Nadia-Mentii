@@ -22,7 +22,8 @@ export const AdminPriceForm = () => {
     console.log(data);
 
     try {
-      const res = await fetch("api/prices", {
+      const res = await fetch(`${process.env.BASE_HOST}api/prices`, {
+        // const res = await fetch("api/prices", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

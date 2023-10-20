@@ -30,7 +30,8 @@ export const AdminNewsForm = () => {
     console.log(data);
 
     try {
-      const res = await fetch("api/news-posts", {
+      const res = await fetch(`${process.env.BASE_HOST}api/news-posts`, {
+        // const res = await fetch("api/news-posts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

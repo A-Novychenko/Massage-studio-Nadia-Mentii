@@ -34,7 +34,8 @@ export const BuySessionForm = ({
     try {
       const sendData = `<b>Заявка із сайта (PriceForm)</b>\n<b>Ім'я: ${name}</b>\n<b>Телефон: ${phone}</b>\n<b>Послуга: ${service}</b>\n<b>Тривалість: ${duration}</b>\n<b>Ціна: ${price}</b>\n`;
 
-      const res = await fetch(`/api/telegram/`, {
+      // const res = await fetch(`/api/telegram/`, {
+      const res = await fetch(`${process.env.BASE_HOST}/api/telegram/`, {
         method: "POST",
         mode: "no-cors",
         headers: {"Content-Type": "application/json"},
