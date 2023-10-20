@@ -13,7 +13,7 @@ export default function Home() {
     <main>
       <BannerSection />
 
-      <SessionsSection />
+      {/* <SessionsSection />
 
       <ReviewsSection />
 
@@ -21,7 +21,7 @@ export default function Home() {
 
       <PriceModalProvider>
         <PriceSection />
-      </PriceModalProvider>
+      </PriceModalProvider> */}
     </main>
   );
 }
