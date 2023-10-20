@@ -10,14 +10,14 @@ type AdminBannerData = {
   imgLink: string;
 };
 
-type SessionsAttributes = {
-  img: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-  title: string;
-  description: string;
-};
+// type SessionsAttributes = {
+//   img: string;
+//   createdAt: string;
+//   updatedAt: string;
+//   publishedAt: string;
+//   title: string;
+//   description: string;
+// };
 
 type SessionsData = {
   _id: string;
@@ -34,7 +34,7 @@ type SessionsData = {
 //   updatedAt: string;
 //   publishedAt: string;
 // };
-type Reviews = {
+type ReviewsData = {
   _id: string;
   name: string;
   comment: string;
@@ -42,16 +42,16 @@ type Reviews = {
   date: string;
 };
 
-type AboutMassageAttributes = {
-  subtitle: string;
-  text: string;
-  img: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-};
+// type AboutMassageAttributes = {
+//   subtitle: string;
+//   text: string;
+//   img: string;
+//   createdAt: string;
+//   updatedAt: string;
+//   publishedAt: string;
+// };
 
-type AboutMassage = {
+type AboutMassageData = {
   _id: string;
   title: string;
   description: string;
@@ -67,7 +67,7 @@ type AboutMassage = {
 //   publishedAt: string;
 // };
 
-type Price = {
+type PriceData = {
   _id: string;
   service: string;
   price: string;

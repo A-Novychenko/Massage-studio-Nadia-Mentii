@@ -1,6 +1,3 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
 import {BannerSection} from "@/components/sections/Banner/BannerSection";
 import {SessionsSection} from "@/components/sections/Sessions/Sessions";
 import {ReviewsSection} from "@/components/sections/Reviews/Reviews";
@@ -13,7 +10,7 @@ export default function Home() {
     <main>
       <BannerSection />
 
-      {/* <SessionsSection />
+      <SessionsSection />
 
       <ReviewsSection />
 
@@ -21,7 +18,7 @@ export default function Home() {
 
       <PriceModalProvider>
         <PriceSection />
-      </PriceModalProvider> */}
+      </PriceModalProvider>
     </main>
   );
 }

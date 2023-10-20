@@ -1,14 +1,28 @@
+import {mongoApi} from "@/services/mongoApi";
 import {BuyBtn} from "@/components/elements/BuyBtn/BuyBtn";
-import styles from "./Price.module.scss";
 import {PriceModal} from "@/components/elements/Modals/PriceModal/PriceModal";
 
-export const PriceSection = async () => {
-  // const res = await fetch("http://localhost:3000/api/prices/");
-  // Novik
-  const res = await fetch(`${process.env.BASE_HOST}/api/prices`);
-  // const res = await fetch(`/api/prices`);
+import styles from "./Price.module.scss";
 
-  const {data} = await res.json();
+export const PriceSection = async () => {
+  const initialData = [
+    {
+      _id: "1",
+      service: "",
+      price: "",
+      duration: "",
+    },
+  ];
+
+  const mongoApiParams = {
+    action: "find",
+    data: null,
+    collection: "prices",
+  };
+
+  const res = await mongoApi(mongoApiParams);
+
+  const data = res?.documents ? res?.documents : initialData;
 
   return (
     <section className={styles.section}>
@@ -17,7 +31,7 @@ export const PriceSection = async () => {
         <table className={styles.list}>
           <tbody>
             {data &&
-              data.map(({_id, service, price, duration}: Price) => {
+              data.map(({_id, service, price, duration}: PriceData) => {
                 const attributes = {_id, service, price, duration};
                 return (
                   <tr className={styles.item} key={_id}>

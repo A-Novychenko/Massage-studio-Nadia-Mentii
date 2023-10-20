@@ -1,13 +1,21 @@
 import Image from "next/image";
-import styles from "./Sessions.module.scss";
 import Link from "next/link";
 
+import {mongoApi} from "@/services/mongoApi";
+
+import styles from "./Sessions.module.scss";
+
 export const SessionsSection = async () => {
-  // const res = await fetch("http://localhost:3000/api/sessions/");
-  // Novik
-  const res = await fetch(`${process.env.BASE_HOST}/api/sessions`);
-  // const res = await fetch(`/api/sessions`);
-  const {data} = await res.json();
+  const initialData = [{_id: "1", title: "", imgLink: "", description: ""}];
+  const mongoApiParams = {
+    action: "find",
+    data: null,
+    collection: "sessions",
+  };
+
+  const res = await mongoApi(mongoApiParams);
+
+  const data = res?.documents ? res?.documents : initialData;
 
   return (
     <section className={styles.section} id="sessions">

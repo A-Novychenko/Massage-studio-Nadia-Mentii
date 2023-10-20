@@ -1,15 +1,28 @@
+import {mongoApi} from "@/services/mongoApi";
 import {AddComment} from "@/components/elements/AddComment/AddComment";
 import {ReviewsSwiper} from "@/components/elements/ReviewsSwiper/ReviewsSwiper";
 
 import styles from "./Reviews.module.scss";
 
 export const ReviewsSection = async () => {
-  // const res = await fetch("http://localhost:3000/api/reviews/");
-  // Novik
-  const res = await fetch(`${process.env.BASE_HOST}/api/reviews`);
-  // const res = await fetch(`/api/reviews`);
+  const initialData = [
+    {
+      _id: "1",
+      name: "",
+      comment: "",
+      grade: "",
+      date: "",
+    },
+  ];
+  const mongoApiParams = {
+    action: "find",
+    data: null,
+    collection: "reviews",
+  };
 
-  const {data} = await res.json();
+  const res = await mongoApi(mongoApiParams);
+
+  const data = res?.documents ? res?.documents : initialData;
 
   return (
     <section className={styles.section} id="reviews">

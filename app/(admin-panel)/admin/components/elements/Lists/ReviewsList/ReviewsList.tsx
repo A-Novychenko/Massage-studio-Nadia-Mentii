@@ -24,7 +24,7 @@ export const AdminReviewsList = async () => {
       <h2 className={styles.name_subsection}>Список відгуків</h2>
       <ul className={styles.list}>
         {data &&
-          data.map(({_id, name, comment, grade, date}: Reviews) => {
+          data.map(({_id, name, comment, grade, date}: ReviewsData) => {
             const formatedDate = new Date(Number(date)).toLocaleString();
             return (
               <li

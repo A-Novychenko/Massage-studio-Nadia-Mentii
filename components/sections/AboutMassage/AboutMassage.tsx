@@ -2,14 +2,29 @@ import Image from "next/image";
 import Link from "next/link";
 import {BsArrowUpRight} from "react-icons/bs";
 
+import {mongoApi} from "@/services/mongoApi";
+
 import styles from "./AboutMassage.module.scss";
 
 export const AboutMassageSection = async () => {
-  // const res = await fetch("http://localhost:3000/api/about-massages");
-  // Novik
-  const res = await fetch(`${process.env.BASE_HOST}/api/about-massages`);
-  // const res = await fetch(`/api/about-massages`);
-  const {data} = await res.json();
+  const initialData = [
+    {
+      _id: "1",
+      title: "",
+      description: "",
+      imgLink: "",
+    },
+  ];
+
+  const mongoApiParams = {
+    action: "find",
+    data: null,
+    collection: "about-massages",
+  };
+
+  const res = await mongoApi(mongoApiParams);
+
+  const data = res?.documents ? res?.documents : initialData;
 
   const hendleText = (text: string) => {
     if (text.length > 420) {
@@ -24,7 +39,7 @@ export const AboutMassageSection = async () => {
         <h2 className={styles.title}>про масаж</h2>
         <ul className={styles.list}>
           {data &&
-            data.map(({_id, title, description, imgLink}: AboutMassage) => {
+            data.map(({_id, title, description, imgLink}: AboutMassageData) => {
               return (
                 <li className={styles.item} key={_id}>
                   {imgLink && (

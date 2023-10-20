@@ -6,7 +6,7 @@ import {usePriceModal} from "@/components/Providers/PriceModalProvider";
 
 import styles from "./BuyBtn.module.scss";
 
-export const BuyBtn = ({attributes}: {attributes: Price}) => {
+export const BuyBtn = ({attributes}: {attributes: PriceData}) => {
   const {isOpen, toggleModal, setData} = usePriceModal();
 
   return (

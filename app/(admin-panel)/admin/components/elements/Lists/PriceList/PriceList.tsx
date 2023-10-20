@@ -14,7 +14,7 @@ export const AdminPriceList = async () => {
       <table className={styles.list}>
         <tbody>
           {data &&
-            data.map(({_id, service, price, duration}: Price) => {
+            data.map(({_id, service, price, duration}: PriceData) => {
               return (
                 <tr className={styles.item} key={_id}>
                   <td className={styles.service}>{service}</td>

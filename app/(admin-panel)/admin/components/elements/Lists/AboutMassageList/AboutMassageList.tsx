@@ -15,7 +15,7 @@ export const AdminAboutMassageList = async () => {
       <h2 className={styles.name_subsection}>Список сеансів</h2>
       <ul className={styles.wrap}>
         {data &&
-          data.map(({_id, imgLink, title, description}: AboutMassage) => {
+          data.map(({_id, imgLink, title, description}: AboutMassageData) => {
             return (
               <li key={_id} className={styles.card}>
                 <h3 className={styles.subtitle}>{title}</h3>

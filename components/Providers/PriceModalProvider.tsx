@@ -6,7 +6,7 @@ const PriceModalContext = createContext({
   isOpen: false,
   toggleModal: (isOpen: boolean) => {},
   data: {price: "", service: "", duration: ""},
-  setData: (data: Price) => {},
+  setData: (data: PriceData) => {},
 });
 
 export const usePriceModal = () => useContext(PriceModalContext);
