@@ -11,7 +11,7 @@ import "swiper/css/scrollbar";
 
 import styles from "./ReviewsSwiper.module.scss";
 
-export const ReviewsSwiper = ({data}: {data: Reviews[]}) => {
+export const ReviewsSwiper = ({data}: {data: ReviewsData[]}) => {
   return (
     <div className={styles.swiper_wrap}>
       <Swiper
