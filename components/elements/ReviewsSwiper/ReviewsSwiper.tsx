@@ -25,7 +25,7 @@ export const ReviewsSwiper = ({data}: {data: Reviews[]}) => {
         onSlideChange={() => console.log("slide change")}
       >
         {data &&
-          data.map(({_id, name, comment, grade, date}: Reviews) => {
+          data.map(({_id, name, comment, grade, date}: ReviewsData) => {
             const formatedDate = new Date(Number(date)).toLocaleString();
 
             return (
