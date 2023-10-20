@@ -7,7 +7,7 @@ type Colors = {
 export const AdminReviewsList = async () => {
   // const res = await fetch("http://localhost:3000/api/reviews/");
   // Novik
-  const res = await fetch("/api/reviews");
+  const res = await fetch(`${process.env.BASE_HOST}/api/reviews`);
   const {data} = await res.json();
 
   const colors: Colors = {

@@ -6,7 +6,7 @@ import Link from "next/link";
 export default async function NewsPage() {
   // const res = await fetch("http://localhost:3000/api/news-posts/");
   // Novik
-  const res = await fetch("/api/news-posts");
+  const res = await fetch(`${process.env.BASE_HOST}/api/news-posts`);
 
   const {data} = await res.json();
 

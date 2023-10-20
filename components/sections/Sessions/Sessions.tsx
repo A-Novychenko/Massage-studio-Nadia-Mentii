@@ -5,7 +5,7 @@ import Link from "next/link";
 export const SessionsSection = async () => {
   // const res = await fetch("http://localhost:3000/api/sessions/");
   // Novik
-  const res = await fetch("/api/sessions");
+  const res = await fetch(`${process.env.BASE_HOST}/api/sessions`);
   const {data} = await res.json();
 
   return (

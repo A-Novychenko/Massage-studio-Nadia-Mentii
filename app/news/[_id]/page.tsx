@@ -11,7 +11,7 @@ export default async function NewsDetailPage({
 }: NewsDetailPageProps) {
   // const res = await fetch(`http://localhost:3000/api/news-posts/${_id}`);
   // Novik
-  const res = await fetch(`/api/news-posts/${_id}`);
+  const res = await fetch(`${process.env.BASE_HOST}/api/news-posts/${_id}`);
 
   const {data} = await res.json();
 
