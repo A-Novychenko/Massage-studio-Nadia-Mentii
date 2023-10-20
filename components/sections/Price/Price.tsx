@@ -3,7 +3,9 @@ import styles from "./Price.module.scss";
 import {PriceModal} from "@/components/elements/Modals/PriceModal/PriceModal";
 
 export const PriceSection = async () => {
-  const res = await fetch("http://127.0.0.1:1337/api/prices/");
+  // const res = await fetch("http://localhost:3000/api/prices/");
+  // Novik
+  const res = await fetch("/api/prices");
 
   const {data} = await res.json();
 
@@ -14,28 +16,19 @@ export const PriceSection = async () => {
         <table className={styles.list}>
           <tbody>
             {data &&
-              data.map(
-                ({
-                  attributes,
-                  id,
-                }: {
-                  attributes: PriceAttributes;
-                  id: string;
-                }) => {
-                  const {service, price, duration} = attributes;
-
-                  return (
-                    <tr className={styles.item} key={id}>
-                      <td className={styles.service}>{service}</td>
-                      <td className={styles.duration}>{duration}</td>
-                      <td className={styles.price}>{price}</td>
-                      <td>
-                        <BuyBtn attributes={attributes} />
-                      </td>
-                    </tr>
-                  );
-                }
-              )}
+              data.map(({_id, service, price, duration}: Price) => {
+                const attributes = {_id, service, price, duration};
+                return (
+                  <tr className={styles.item} key={_id}>
+                    <td className={styles.service}>{service}</td>
+                    <td className={styles.duration}>{duration}</td>
+                    <td className={styles.price}>{price}</td>
+                    <td>
+                      <BuyBtn attributes={attributes} />
+                    </td>
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
       </div>

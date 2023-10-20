@@ -2,7 +2,7 @@
 
 import {useForm, SubmitHandler} from "react-hook-form";
 
-import styles from "./AddComment.module.scss";
+import styles from "./ReviewsForm.module.scss";
 
 interface IFormInput {
   name: string;
@@ -10,7 +10,7 @@ interface IFormInput {
   grade: string;
 }
 
-export const AddComment = () => {
+export const AdminReviewsForm = () => {
   const {
     register,
     handleSubmit,

@@ -1,5 +1,5 @@
 import {AdminSlidesForm} from "../../elements/Forms/SlidesForm/SlidesForm";
-import {AdminSlidesList} from "../../elements/SlidesList/SlidesList";
+import {AdminSlidesList} from "../../elements/Lists/SlidesList/SlidesList";
 
 import styles from "./Slides.module.scss";
 

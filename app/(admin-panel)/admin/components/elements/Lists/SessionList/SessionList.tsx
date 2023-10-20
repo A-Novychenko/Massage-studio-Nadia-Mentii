@@ -4,7 +4,10 @@ import Link from "next/link";
 import styles from "./SessionList.module.scss";
 
 export const AdminSessionList = async () => {
-  const res = await fetch("http://localhost:3000/api/sessions/");
+  // const res = await fetch("http://localhost:3000/api/sessions/");
+  // Novik
+  const res = await fetch("/api/sessions");
+
   const {data} = await res.json();
 
   return (

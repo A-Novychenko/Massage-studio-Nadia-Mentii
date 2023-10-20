@@ -3,9 +3,9 @@ import Image from "next/image";
 import styles from "./SlidesList.module.scss";
 
 export const AdminSlidesList = async () => {
-  const res = await fetch("http://127.0.0.1:3000/api/slides", {
-    cache: "no-store",
-  });
+  // const res = await fetch("http://localhost:3000/api/slides");
+  // Novik
+  const res = await fetch("/api/slides");
   const data = await res.json();
 
   const slides = data?.data;

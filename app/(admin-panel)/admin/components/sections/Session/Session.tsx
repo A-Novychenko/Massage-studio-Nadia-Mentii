@@ -1,5 +1,5 @@
 import {AdminSessionForm} from "../../elements/Forms/SessionForm/SessionForm";
-import {AdminSessionList} from "../../elements/SessionList/SessionList";
+import {AdminSessionList} from "../../elements/Lists/SessionList/SessionList";
 import styles from "./Session.module.scss";
 
 export const AdminSession = () => {

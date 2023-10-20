@@ -1,9 +1,9 @@
 import {BannerSwiper} from "@/components/elements/swiper/swiper";
 
 export const BannerSection = async () => {
-  const res = await fetch("http://127.0.0.1:3000/api/slides", {
-    cache: "no-store",
-  });
+  // const res = await fetch("http://localhost:3000/api/slides");
+  // Novik
+  const res = await fetch("/api/slides");
   const data = await res.json();
 
   const slides = data?.data;

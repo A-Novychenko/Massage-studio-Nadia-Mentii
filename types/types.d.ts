@@ -26,13 +26,20 @@ type SessionsData = {
   description: string;
 };
 
-type CommentAttributes = {
+// type CommentAttributes = {
+//   name: string;
+//   comment: string;
+//   grade: string;
+//   createdAt: string;
+//   updatedAt: string;
+//   publishedAt: string;
+// };
+type Reviews = {
+  _id: string;
   name: string;
   comment: string;
   grade: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
+  date: string;
 };
 
 type AboutMassageAttributes = {
@@ -44,13 +51,27 @@ type AboutMassageAttributes = {
   publishedAt: string;
 };
 
-type PriceAttributes = {
+type AboutMassage = {
+  _id: string;
+  title: string;
+  description: string;
+  imgLink: string;
+};
+
+// type PriceAttributes = {
+//   service: string;
+//   price: string;
+//   duration: string;
+//   createdAt: string;
+//   updatedAt: string;
+//   publishedAt: string;
+// };
+
+type Price = {
+  _id: string;
   service: string;
   price: string;
   duration: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
 };
 
 type CloseModalProps = {
@@ -79,13 +100,23 @@ type PriceFormProps = {
   duration: string;
 };
 
-type NewsAttributes = {
+// type NewsAttributes = {
+//   title: string;
+//   long_descr: string;
+//   short_descr: string;
+//   img_small: string;
+//   img_big: string;
+//   createdAt: string;
+//   updatedAt: string;
+//   publishedAt: string;
+// };
+
+type News = {
+  _id: string;
   title: string;
-  long_descr: string;
-  short_descr: string;
-  img_small: string;
-  img_big: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
+  shortDescription: string;
+  longDescription: string;
+  imgLink: string;
+  imgLargeLink: string;
+  date: string;
 };

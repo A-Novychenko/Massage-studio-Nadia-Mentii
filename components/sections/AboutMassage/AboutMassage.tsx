@@ -5,7 +5,9 @@ import {BsArrowUpRight} from "react-icons/bs";
 import styles from "./AboutMassage.module.scss";
 
 export const AboutMassageSection = async () => {
-  const res = await fetch("http://127.0.0.1:1337/api/about-massages");
+  // const res = await fetch("http://localhost:3000/api/about-massages");
+  // Novik
+  const res = await fetch("/api/about-massages");
   const {data} = await res.json();
 
   const hendleText = (text: string) => {
@@ -21,43 +23,34 @@ export const AboutMassageSection = async () => {
         <h2 className={styles.title}>про масаж</h2>
         <ul className={styles.list}>
           {data &&
-            data.map(
-              ({
-                attributes,
-                id,
-              }: {
-                attributes: AboutMassageAttributes;
-                id: string;
-              }) => {
-                const {subtitle, text, img} = attributes;
-                return (
-                  <li className={styles.item} key={id}>
-                    {img && (
-                      <div className={styles.img_wrap}>
-                        <Image
-                          className={styles.img}
-                          src={img}
-                          alt={subtitle}
-                          width={1200}
-                          height={600}
-                        />
-                      </div>
-                    )}
-                    <div className={img ? styles.text : styles.text_not_img}>
-                      <h3 className={styles.subtitle}>{subtitle}</h3>
-                      <p className={styles.descr}>{hendleText(text)}</p>
-
-                      <Link className={styles.link_more} href="">
-                        <span className={styles.link_more_text}>
-                          прочитати більше
-                        </span>
-                        <BsArrowUpRight size={16} color="#2196F3" />
-                      </Link>
+            data.map(({_id, title, description, imgLink}: AboutMassage) => {
+              return (
+                <li className={styles.item} key={_id}>
+                  {imgLink && (
+                    <div className={styles.img_wrap}>
+                      <Image
+                        className={styles.img}
+                        src={imgLink}
+                        alt={title}
+                        width={1200}
+                        height={600}
+                      />
                     </div>
-                  </li>
-                );
-              }
-            )}
+                  )}
+                  <div className={imgLink ? styles.text : styles.text_not_img}>
+                    <h3 className={styles.subtitle}>{title}</h3>
+                    <p className={styles.descr}>{hendleText(description)}</p>
+
+                    <Link className={styles.link_more} href="">
+                      <span className={styles.link_more_text}>
+                        прочитати більше
+                      </span>
+                      <BsArrowUpRight size={16} color="#2196F3" />
+                    </Link>
+                  </div>
+                </li>
+              );
+            })}
         </ul>
       </div>
     </section>

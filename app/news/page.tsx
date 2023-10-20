@@ -4,7 +4,9 @@ import styles from "./NewsPage.module.scss";
 import Link from "next/link";
 
 export default async function NewsPage() {
-  const res = await fetch("http://127.0.0.1:1337/api/news-posts/");
+  // const res = await fetch("http://localhost:3000/api/news-posts/");
+  // Novik
+  const res = await fetch("/api/news-posts");
 
   const {data} = await res.json();
 
@@ -15,22 +17,22 @@ export default async function NewsPage() {
         <ul>
           {data &&
             data.map(
-              ({attributes, id}: {attributes: NewsAttributes; id: string}) => {
-                const {
-                  title,
-                  long_descr,
-                  short_descr,
-                  img_small,
-                  img_big,
-                  createdAt,
-                } = attributes;
+              ({
+                _id,
+                title,
+                shortDescription,
+                longDescription,
+                imgLink,
+                imgLargeLink,
+                date,
+              }: News) => {
                 return (
-                  <li className={styles.item} key={id}>
+                  <li className={styles.item} key={_id}>
                     <div className={styles.wrap}>
                       <div className={styles.img_wrap}>
                         <Image
                           className={styles.img}
-                          src={img_small}
+                          src={imgLink}
                           alt={title}
                           width={700}
                           height={500}
@@ -38,16 +40,14 @@ export default async function NewsPage() {
                       </div>
 
                       <time className={styles.time} dateTime="2018-07-14">
-                        {/* {createdAt} */}
-                        {new Date(createdAt).toDateString()}
-                        {/* {locDate(createdAt)} */}
+                        {new Date(Number(date)).toDateString()}
                       </time>
                     </div>
 
                     <div className={styles.text_box}>
                       <h2 className={styles.title}>{title}</h2>
-                      <p className={styles.descr}>{short_descr}</p>
-                      <Link className={styles.link_more} href={`/news/${id}`}>
+                      <p className={styles.descr}>{shortDescription}</p>
+                      <Link className={styles.link_more} href={`/news/${_id}`}>
                         детальніше
                       </Link>
                     </div>
