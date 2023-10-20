@@ -1,20 +1,33 @@
 import Image from "next/image";
 
-type NewsDetailPageProps = {
-  params: {
-    _id: number;
-  };
-};
+import {mongoApi} from "@/services/mongoApi";
 
 export default async function NewsDetailPage({
   params: {_id},
 }: NewsDetailPageProps) {
-  // const res = await fetch(`http://localhost:3000/api/news-posts/${_id}`);
-  // Novik
-  const res = await fetch(`${process.env.BASE_HOST}/api/news-posts/${_id}`);
-  // const res = await fetch(`/api/news-posts/${_id}`);
+  const initialData = {
+    _id: "1",
+    title: "",
+    shortDescription: "",
+    longDescription: "",
+    imgLink:
+      "https://res.cloudinary.com/dsgx4xoew/image/upload/v1697839490/empty_gzi49n.png",
+    imgLargeLink:
+      "https://res.cloudinary.com/dsgx4xoew/image/upload/v1697839490/empty_gzi49n.png",
+    date: "",
+  };
 
-  const {data} = await res.json();
+  const mongoApiParams = {
+    action: "findOne",
+    data: {
+      _id: {$oid: _id},
+    },
+    collection: "news-posts",
+  };
+
+  const res = await mongoApi(mongoApiParams);
+
+  const data = res?.document ? res?.document : initialData;
 
   const {
     title,

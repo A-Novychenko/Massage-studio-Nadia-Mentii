@@ -2,7 +2,14 @@ import {mongoApi} from "@/services/mongoApi";
 import {BannerSwiper} from "@/components/elements/swiper/swiper";
 
 export const BannerSection = async () => {
-  const initialSlides = [{_id: "1", title: "", imgLink: ""}];
+  const initialSlides = [
+    {
+      _id: "1",
+      title: "",
+      imgLink:
+        "https://res.cloudinary.com/dsgx4xoew/image/upload/v1697839490/empty_gzi49n.png",
+    },
+  ];
   const mongoApiParams = {
     action: "find",
     data: null,

@@ -12,7 +12,8 @@ export const AboutMassageSection = async () => {
       _id: "1",
       title: "",
       description: "",
-      imgLink: "",
+      imgLink:
+        "https://res.cloudinary.com/dsgx4xoew/image/upload/v1697839490/empty_gzi49n.png",
     },
   ];
 

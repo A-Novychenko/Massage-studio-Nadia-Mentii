@@ -6,7 +6,15 @@ import {mongoApi} from "@/services/mongoApi";
 import styles from "./Sessions.module.scss";
 
 export const SessionsSection = async () => {
-  const initialData = [{_id: "1", title: "", imgLink: "", description: ""}];
+  const initialData = [
+    {
+      _id: "1",
+      title: "",
+      imgLink:
+        "https://res.cloudinary.com/dsgx4xoew/image/upload/v1697839490/empty_gzi49n.png",
+      description: "",
+    },
+  ];
   const mongoApiParams = {
     action: "find",
     data: null,

@@ -8,7 +8,7 @@ type MongoApiBody = {
   collection: string;
   database: string;
   dataSource: string;
-  projection?: object;
+  filter?: object;
 };
 
 const {MONGODB_API_KEY} = process.env;
@@ -21,7 +21,7 @@ export const mongoApi = async ({action, data, collection}: MongoApiParams) => {
   };
 
   if (data) {
-    body.projection = data;
+    body.filter = data;
   }
 
   const res = await fetch(

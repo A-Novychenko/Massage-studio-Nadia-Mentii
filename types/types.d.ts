@@ -10,15 +10,6 @@ type AdminBannerData = {
   imgLink: string;
 };
 
-// type SessionsAttributes = {
-//   img: string;
-//   createdAt: string;
-//   updatedAt: string;
-//   publishedAt: string;
-//   title: string;
-//   description: string;
-// };
-
 type SessionsData = {
   _id: string;
   title: string;
@@ -26,14 +17,6 @@ type SessionsData = {
   description: string;
 };
 
-// type CommentAttributes = {
-//   name: string;
-//   comment: string;
-//   grade: string;
-//   createdAt: string;
-//   updatedAt: string;
-//   publishedAt: string;
-// };
 type ReviewsData = {
   _id: string;
   name: string;
@@ -42,30 +25,12 @@ type ReviewsData = {
   date: string;
 };
 
-// type AboutMassageAttributes = {
-//   subtitle: string;
-//   text: string;
-//   img: string;
-//   createdAt: string;
-//   updatedAt: string;
-//   publishedAt: string;
-// };
-
 type AboutMassageData = {
   _id: string;
   title: string;
   description: string;
   imgLink: string;
 };
-
-// type PriceAttributes = {
-//   service: string;
-//   price: string;
-//   duration: string;
-//   createdAt: string;
-//   updatedAt: string;
-//   publishedAt: string;
-// };
 
 type PriceData = {
   _id: string;
@@ -100,18 +65,7 @@ type PriceFormProps = {
   duration: string;
 };
 
-// type NewsAttributes = {
-//   title: string;
-//   long_descr: string;
-//   short_descr: string;
-//   img_small: string;
-//   img_big: string;
-//   createdAt: string;
-//   updatedAt: string;
-//   publishedAt: string;
-// };
-
-type News = {
+type NewsData = {
   _id: string;
   title: string;
   shortDescription: string;
@@ -119,4 +73,10 @@ type News = {
   imgLink: string;
   imgLargeLink: string;
   date: string;
+};
+
+type NewsDetailPageProps = {
+  params: {
+    _id: number;
+  };
 };
