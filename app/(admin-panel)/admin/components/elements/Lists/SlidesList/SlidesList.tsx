@@ -1,15 +1,28 @@
 import Image from "next/image";
 
+import {mongoApi} from "@/services/mongoApi";
+
 import styles from "./SlidesList.module.scss";
 
 export const AdminSlidesList = async () => {
-  // const res = await fetch("http://localhost:3000/api/slides");
-  // Novik
-  const res = await fetch(`${process.env.BASE_HOST}/api/slides`);
-  // const res = await fetch(`/api/slides`);
-  const data = await res.json();
+  const initialSlides = [
+    {
+      _id: "1",
+      title: "",
+      imgLink:
+        "https://res.cloudinary.com/dsgx4xoew/image/upload/v1697839490/empty_gzi49n.png",
+    },
+  ];
+  const mongoApiParams = {
+    action: "find",
+    data: null,
+    collection: "slides",
+  };
 
-  const slides = data?.data;
+  const res = await mongoApi(mongoApiParams);
+
+  const slides = res?.documents ? res?.documents : initialSlides;
+
   return (
     <div className={styles.section}>
       <p className={styles.name_subsection}>Збережені слайди: </p>

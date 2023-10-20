@@ -1,3 +1,5 @@
+import {mongoApi} from "@/services/mongoApi";
+
 import styles from "./ReviewsList.module.scss";
 
 type Colors = {
@@ -5,11 +7,24 @@ type Colors = {
 };
 
 export const AdminReviewsList = async () => {
-  // const res = await fetch("http://localhost:3000/api/reviews/");
-  // Novik
-  const res = await fetch(`${process.env.BASE_HOST}/api/reviews`);
-  // const res = await fetch(`/api/reviews`);
-  const {data} = await res.json();
+  const initialData = [
+    {
+      _id: "1",
+      name: "",
+      comment: "",
+      grade: "",
+      date: "",
+    },
+  ];
+  const mongoApiParams = {
+    action: "find",
+    data: null,
+    collection: "reviews",
+  };
+
+  const res = await mongoApi(mongoApiParams);
+
+  const data = res?.documents ? res?.documents : initialData;
 
   const colors: Colors = {
     "1": "#f00",

@@ -1,18 +1,30 @@
 import Image from "next/image";
-import Link from "next/link";
+
+import {mongoApi} from "@/services/mongoApi";
 
 import styles from "./SessionList.module.scss";
 
 export const AdminSessionList = async () => {
-  // const res = await fetch("http://localhost:3000/api/sessions/");
-  // Novik
-  const res = await fetch(`${process.env.BASE_HOST}/api/sessions`);
-  // const res = await fetch(`/api/sessions`);
+  const initialData = [
+    {
+      _id: "1",
+      title: "",
+      imgLink:
+        "https://res.cloudinary.com/dsgx4xoew/image/upload/v1697839490/empty_gzi49n.png",
+      description: "",
+    },
+  ];
+  const mongoApiParams = {
+    action: "find",
+    data: null,
+    collection: "sessions",
+  };
 
-  const {data} = await res.json();
+  const res = await mongoApi(mongoApiParams);
+
+  const data = res?.documents ? res?.documents : initialData;
 
   return (
-    // <div className="container">
     <div className={styles.section}>
       <h2 className={styles.name_subsection}>Список сеансів</h2>
       <ul className={styles.wrap}>

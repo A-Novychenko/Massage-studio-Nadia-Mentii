@@ -1,14 +1,29 @@
 import Image from "next/image";
-import Link from "next/link";
+
+import {mongoApi} from "@/services/mongoApi";
 
 import styles from "./AboutMassageList.module.scss";
 
 export const AdminAboutMassageList = async () => {
-  // const res = await fetch("http://localhost:3000/api/about-massages/");
-  // Novik
-  const res = await fetch(`${process.env.BASE_HOST}/api/about-massages`);
-  // const res = await fetch(`/api/about-massages`);
-  const {data} = await res.json();
+  const initialData = [
+    {
+      _id: "1",
+      title: "",
+      description: "",
+      imgLink:
+        "https://res.cloudinary.com/dsgx4xoew/image/upload/v1697839490/empty_gzi49n.png",
+    },
+  ];
+
+  const mongoApiParams = {
+    action: "find",
+    data: null,
+    collection: "about-massages",
+  };
+
+  const res = await mongoApi(mongoApiParams);
+
+  const data = res?.documents ? res?.documents : initialData;
 
   return (
     <div className={styles.section}>

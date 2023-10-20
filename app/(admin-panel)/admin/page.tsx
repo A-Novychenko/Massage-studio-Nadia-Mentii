@@ -20,12 +20,12 @@ export default function AdminPage() {
           Admin panel
         </h1>
       </div>
-      {/* <AdminSlidesSection />
+      <AdminSlidesSection />
       <AdminSession />
       <AdminReviews />
       <AdminAboutMassage />
       <AdminPrice />
-      <AdminNews /> */}
+      <AdminNews />
     </>
   );
 }
