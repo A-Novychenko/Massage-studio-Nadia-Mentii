@@ -11,6 +11,8 @@ export interface IId {
   $oid: string;
 }
 
+const {MONGODB_API_KEY} = process.env;
+
 export const BannerSection = async () => {
   // const res = await fetch("http://localhost:3000/api/slides");
   // Novik
@@ -54,8 +56,9 @@ export const BannerSection = async () => {
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Request-Headers": "*",
-        "api-key":
-          "hmYaEGFYYKUAzKz8IH6xKjPDJXovAYkxbFyFWVUnQ2QKZdKbjH2cxcXQufVyMZdl",
+        "api-key": MONGODB_API_KEY!,
+        // "api-key":
+        //   "hmYaEGFYYKUAzKz8IH6xKjPDJXovAYkxbFyFWVUnQ2QKZdKbjH2cxcXQufVyMZdl",
         Accept: "application/ejson",
       },
       body: JSON.stringify({
