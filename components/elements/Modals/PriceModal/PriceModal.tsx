@@ -9,8 +9,6 @@ import styles from "./PriceModal.module.scss";
 export const PriceModal = () => {
   const {isOpen, toggleModal, data} = usePriceModal();
 
-  console.log("data", data);
-
   return (
     <>
       {isOpen && (

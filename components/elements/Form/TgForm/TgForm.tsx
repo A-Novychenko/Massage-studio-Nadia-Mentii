@@ -24,8 +24,7 @@ export const TgForm = ({closeModal}: CloseModalProps) => {
     try {
       const sendData = `<b>Запис із сайта</b>\n<b>Ім'я: ${name}</b>\n<b>Телефон: ${phone}</b>\n<b>Коментар: ${comment}</b>\n`;
 
-      // const res = await fetch(`/api/telegram/`, {
-      const res = await fetch(`${process.env.BASE_HOST}/api/telegram/`, {
+      const res = await fetch(`/api/telegram/`, {
         method: "POST",
         mode: "no-cors",
         headers: {"Content-Type": "application/json"},
@@ -39,7 +38,7 @@ export const TgForm = ({closeModal}: CloseModalProps) => {
       reset();
       setIsVisibleNotify("succ");
     } catch (error) {
-      setIsLoading(true);
+      setIsLoading(false);
       setIsVisibleNotify("fail");
     } finally {
       setTimeout(() => {

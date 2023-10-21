@@ -19,8 +19,6 @@ export const AdminPriceForm = () => {
   } = useForm<IFormInput>();
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
-    console.log(data);
-
     try {
       const res = await fetch(`${process.env.BASE_HOST}api/prices`, {
         // const res = await fetch("api/prices", {

@@ -24,8 +24,6 @@ export const AdminAboutMassageForm = () => {
   const [imgLink, setImgLink] = useState("");
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
-    console.log(data);
-
     try {
       const res = await fetch(`${process.env.BASE_HOST}api/about-massages`, {
         // const res = await fetch("api/about-massages", {

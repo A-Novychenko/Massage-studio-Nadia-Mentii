@@ -24,8 +24,6 @@ export const AdminSessionForm = () => {
   const [imgLink, setImgLink] = useState("");
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
-    console.log(data);
-
     try {
       const res = await fetch(`${process.env.BASE_HOST}api/sessions`, {
         // const res = await fetch("api/sessions", {

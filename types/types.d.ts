@@ -49,6 +49,12 @@ interface IFormInput {
   comment: string;
 }
 
+interface IConsultFormInput {
+  name: string;
+  phone: string;
+  comment: string;
+}
+
 type InputsBuySessionForm = {
   phone: string;
   name: string;

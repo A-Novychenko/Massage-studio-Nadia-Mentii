@@ -7,7 +7,6 @@ export const POST = async (req: Request, res: Response) => {
   const {TOKEN, METHOD, TG_URL, CHAT_ID} = process.env;
   const BASE_URL = `${TG_URL}${TOKEN}/${METHOD}`;
   const msg = await req.json();
-  console.log("msgAPI", msg);
 
   const result = await sendTgAxios.post(BASE_URL, {
     chat_id: CHAT_ID,
