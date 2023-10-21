@@ -26,7 +26,7 @@ export const PriceSection = async () => {
 
   return (
     <section className={styles.section}>
-      <div className="container">
+      <div className="container price_container">
         <h2 className={styles.title}>Вартість сеансів</h2>
         <table className={styles.list}>
           <tbody>

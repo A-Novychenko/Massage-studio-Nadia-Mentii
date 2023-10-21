@@ -3,9 +3,17 @@
 import {useState} from "react";
 import Image from "next/image";
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Navigation, Pagination, Scrollbar, A11y} from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
 
 import {BannerModal} from "../Modals/BannerModal/BannerModal";
+
+import "swiper/css/autoplay";
 
 // Import Swiper styles
 import "swiper/css";
@@ -29,7 +37,7 @@ export const BannerSwiper = ({slides}: {slides: BannerData}) => {
   return (
     <div className={styles.swiper_wrap}>
       <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         spaceBetween={50}
         slidesPerView={1}
         navigation
@@ -37,6 +45,23 @@ export const BannerSwiper = ({slides}: {slides: BannerData}) => {
         // scrollbar={{draggable: true}}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
+        autoplay={{delay: 3000}}
+        breakpoints={{
+          // when window width is >= 640px
+          320: {
+            width: 320,
+          },
+          640: {
+            width: 640,
+          },
+          // when window width is >= 768px
+          768: {
+            width: 768,
+          },
+          1200: {
+            width: 1200,
+          },
+        }}
       >
         {slides &&
           slides.map(({_id, title, imgLink}) => {

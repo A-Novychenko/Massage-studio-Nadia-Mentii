@@ -18,11 +18,25 @@ export const ReviewsSwiper = ({data}: {data: ReviewsData[]}) => {
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={50}
         slidesPerView={3}
-        navigation
+        // navigation
         pagination={{clickable: true}}
         // scrollbar={{draggable: true}}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
+        breakpoints={{
+          // when window width is >= 640px
+          320: {
+            slidesPerView: 1,
+          },
+
+          // when window width is >= 768px
+          768: {
+            slidesPerView: 2,
+          },
+          1200: {
+            slidesPerView: 3,
+          },
+        }}
       >
         {data &&
           data.map(({_id, name, comment, grade, date}: ReviewsData) => {

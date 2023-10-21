@@ -44,8 +44,10 @@
 }
 
 .img_wrap {
-  width: 648px;
-  height: 300px;
+  @media screen and (min-width: 1200px) {
+    width: 648px;
+    height: 300px;
+  }
 }
 
 .img {
@@ -58,9 +60,13 @@
 
 .text {
   padding: 20px;
-  width: 1000px;
+
   font-size: 20px;
+  @media screen and (min-width: 1200px) {
+    width: 1000px;
+  }
 }
+
 .text_not_img {
   padding: 20px;
   width: 100%;

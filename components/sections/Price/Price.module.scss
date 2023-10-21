@@ -30,9 +30,15 @@
 
 .item {
   text-align: center;
-  padding: 20px;
-  font-size: 20px;
-  font-weight: 600;
+  // padding: 8px;
+  font-size: 12px;
+  // font-weight: 600;
+
+  @media screen and (min-width: 1200px) {
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 600;
+  }
 
   &:nth-child(odd) {
     background-color: #575757;
@@ -57,6 +63,9 @@
 .duration {
   text-align: center;
 }
+
 .price {
-  padding: 30px;
+  @media screen and (min-width: 1200px) {
+    padding: 30px;
+  }
 }
