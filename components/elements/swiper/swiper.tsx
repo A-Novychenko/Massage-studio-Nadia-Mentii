@@ -13,14 +13,11 @@ import {
 
 import {BannerModal} from "../Modals/BannerModal/BannerModal";
 
-import "swiper/css/autoplay";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-
+import "swiper/css/autoplay";
 import styles from "./swiper.module.scss";
 
 export const BannerSwiper = ({slides}: {slides: BannerData}) => {
@@ -40,28 +37,10 @@ export const BannerSwiper = ({slides}: {slides: BannerData}) => {
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         spaceBetween={50}
         slidesPerView={1}
-        navigation
         pagination={{clickable: true}}
-        // scrollbar={{draggable: true}}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
         autoplay={{delay: 3000}}
-        breakpoints={{
-          // when window width is >= 640px
-          320: {
-            width: 320,
-          },
-          640: {
-            width: 640,
-          },
-          // when window width is >= 768px
-          768: {
-            width: 768,
-          },
-          1200: {
-            width: 1200,
-          },
-        }}
       >
         {slides &&
           slides.map(({_id, title, imgLink}) => {
@@ -79,6 +58,7 @@ export const BannerSwiper = ({slides}: {slides: BannerData}) => {
                     <p className={styles.title}>{title}</p>
                   </div>
                 </div>
+                <p className={styles.title_mob}>{title}</p>
               </SwiperSlide>
             );
           })}
