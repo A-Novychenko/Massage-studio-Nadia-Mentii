@@ -1,6 +1,55 @@
+.open_btn {
+  display: block;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 8px;
+
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 8px;
+
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+
+  cursor: pointer;
+
+  transition: background-color var(--animation);
+
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color-hf);
+  }
+}
+
 .add_slide_box {
   border: 1px solid #949494;
   border-radius: 12px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close_btn {
+  color: #ffffff;
+  padding: 32px;
+  margin: 0;
+  line-height: 0;
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+
+  transition: color var(--animation);
+
+  &:hover,
+  &:focus {
+    color: red;
+  }
 }
 
 .name_subsection {
@@ -32,6 +81,15 @@
   padding: 8px;
   border-radius: 8px;
 }
+
+.textarea {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 8px;
+  resize: none;
+  height: 200px;
+}
+
 .submit_btn {
   margin-top: 20px;
   padding: 8px;

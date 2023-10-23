@@ -4,7 +4,6 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation, Pagination, Scrollbar, A11y} from "swiper/modules";
 import {FaUserAlt, FaRegStar} from "react-icons/fa";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -30,18 +29,14 @@ export const ReviewsSwiper = ({data}: {data: ReviewsData[]}) => {
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={50}
         slidesPerView={3}
-        // navigation
         pagination={{clickable: true}}
-        // scrollbar={{draggable: true}}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
         breakpoints={{
-          // when window width is >= 640px
           0: {
             slidesPerView: 1,
           },
 
-          // when window width is >= 768px
           768: {
             slidesPerView: 2,
           },
@@ -73,26 +68,6 @@ export const ReviewsSwiper = ({data}: {data: ReviewsData[]}) => {
                   </div>
 
                   <p className={styles.comment}>{comment}</p>
-                  {/* <p className={styles.comment}>
-                    Я хочу поділитися своїм враженням про оздоровчий масаж, який
-                    я отримав у вашому салоні. Це був неймовірний досвід, який
-                    відразу поліпшив моє самопочуття та фізичний стан. Масажист
-                    виявився дуже професійним і уважним до моїх потреб. Він
-                    знає, як правильно впливати на мої м'язи та сприяти їх
-                    розслабленню. Після процедури я відчуваю велику полегшеність
-                    у спині та плечах, а також покращення кровообігу. Масаж
-                    також допоміг зняти напругу та стрес, що дозволило мені
-                    почуватися більш зосередженим і енергійним. Я багато разів
-                    відвідував різні салони масажу, але ваш був найкращим з
-                    усіх. Рекомендую всім спробувати оздоровчий масаж у вашому
-                    салоні - це справжня насолода для тіла і душі спробувати
-                    оздоровчий масаж у вашому салоні - це справжня насолода для
-                    тіла і душі ваш був найкращим з усіх. Рекомендую всім
-                    спробувати оздоровчий масаж у вашому салоні - це справжня
-                    насолода для тіла і душі спробувати оздоровч ий масаж у
-                    вашому салоні - це справжня насолода для тіла і душіий масаж
-                    у вашому салон
-                  </p> */}
                 </div>
               </SwiperSlide>
             );
