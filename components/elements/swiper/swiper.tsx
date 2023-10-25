@@ -39,7 +39,7 @@ export const BannerSwiper = ({slides}: {slides: BannerData}) => {
         slidesPerView={1}
         pagination={{clickable: true}}
         onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
+        // onSlideChange={() => console.log("slide change")}
         autoplay={{delay: 3000}}
       >
         {slides &&

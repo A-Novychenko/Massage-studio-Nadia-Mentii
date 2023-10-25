@@ -34,19 +34,23 @@ export const SessionsSection = async () => {
             data.map(({_id, title, imgLink, description}: SessionsData) => {
               return (
                 <li key={_id} className={styles.item}>
-                  <Link href="" className={styles.link}>
-                    <Image
-                      src={imgLink}
-                      alt={title}
-                      width={380}
-                      height={280}
-                      className={styles.img}
-                    />
+                  <div className={styles.link}>
+                    {/* <Link href="" className={styles.link}> */}
+                    <div className={styles.imgWrap}>
+                      <Image
+                        src={imgLink}
+                        alt={title}
+                        width={380}
+                        height={280}
+                        className={styles.img}
+                      />
+                    </div>
                     <h3 className={styles.subtitle}>{title}</h3>
                     <div className={styles.overlay}>
                       <p className={styles.descr}>{description}</p>
                     </div>
-                  </Link>
+                    {/* </Link> */}
+                  </div>
                 </li>
               );
             })}

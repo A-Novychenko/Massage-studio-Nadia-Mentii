@@ -1,42 +1,35 @@
 "use client";
 
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {useForm, SubmitHandler} from "react-hook-form";
 import {AiOutlineClose} from "react-icons/ai";
+import {experimental_useFormState as useFormState} from "react-dom";
 
 import styles from "./AddComment.module.scss";
+import {experimental_useFormStatus} from "react-dom";
+import {createComment} from "@/app/actions";
+import {Watch} from "react-loader-spinner";
 
-interface IFormInput {
-  name: string;
-  comment: string;
-  grade: string;
-}
+const initialState = {
+  message: null,
+  loading: false,
+  error: false,
+};
 
 export const AddComment = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: {errors},
-    reset,
-  } = useForm<IFormInput>();
-
   const [isOpen, setIsOpen] = useState(false);
+  const [state, formAction] = useFormState(createComment, initialState);
+  const {pending} = experimental_useFormStatus();
 
-  const onSubmit: SubmitHandler<IFormInput> = async (data) => {
-    console.log(data);
+  const [name, setName] = useState("");
+  const [comment, setComment] = useState("");
+  const [grade, setGrade] = useState("5");
+  console.log("grade", grade);
 
-    try {
-      const res = await fetch(`api/reviews`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "no-cors",
-        body: JSON.stringify({...data, date: Date.now().toString()}),
-      });
-
-      reset();
-    } catch (error) {}
+  const resetForm = () => {
+    setName("");
+    setComment("");
+    setGrade("5");
   };
 
   return (
@@ -60,6 +53,8 @@ export const AddComment = () => {
               type="button"
               onClick={() => {
                 setIsOpen(false);
+                state.message = null;
+                resetForm();
               }}
             >
               <AiOutlineClose size={32} />
@@ -67,8 +62,12 @@ export const AddComment = () => {
           </div>
 
           <form
-            onSubmit={handleSubmit(onSubmit)}
+            action={formAction}
             className={styles.form_container}
+            onSubmit={() => {
+              state.loading = true;
+              resetForm();
+            }}
           >
             <div className={styles.input_container}>
               <label className={styles.input_label}>
@@ -77,9 +76,15 @@ export const AddComment = () => {
               </label>
               <input
                 className={styles.input}
-                {...register("name", {required: true})}
+                type="text"
+                id="name"
+                name="name"
+                required
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
               />
-              {errors.name && <p role="alert">{errors.name.message}</p>}
             </div>
 
             <div className={styles.input_container}>
@@ -88,60 +93,156 @@ export const AddComment = () => {
               </label>
               <textarea
                 className={styles.textarea}
-                {...register("comment", {required: true, min: 2, max: 1000})}
+                id="comment"
+                name="comment"
+                required
+                value={comment}
+                onChange={(e) => {
+                  setComment(e.target.value);
+                }}
               />
-              {errors.comment && <p role="alert">{errors.comment.message}</p>}
             </div>
 
-            <div style={{display: "flex", flexDirection: "row", gap: 10}}>
-              <span className={styles.requared}>*</span>
-              <p> Оцінка</p>
-              <label>
-                <p>1</p>
-                <input
-                  {...register("grade", {required: true})}
-                  type="radio"
-                  value={1}
-                />
-              </label>
-              <label>
-                <p>2</p>
-                <input
-                  {...register("grade", {required: true})}
-                  type="radio"
-                  value={2}
-                />
-              </label>
-              <label>
-                <p>3</p>
-                <input
-                  {...register("grade", {required: true})}
-                  type="radio"
-                  value={3}
-                />
-              </label>
-              <label>
-                <p>4</p>
-                <input
-                  {...register("grade", {required: true})}
-                  type="radio"
-                  value={4}
-                />
-              </label>
-              <label>
-                <p>5</p>
-                <input
-                  {...register("grade", {required: true})}
-                  type="radio"
-                  value={5}
-                />
-              </label>
+            <div className={styles.grade_box}>
+              <div className={styles.grade_header}>
+                <span className={styles.requared}>*</span>
+                <p> Оцінка</p>
+              </div>
+              <div className={styles.grade_btns}>
+                <label
+                  className={styles.grade_btn_wrap}
+                  style={{
+                    backgroundColor: grade === "1" ? "#2196F3" : "transparent",
+                  }}
+                >
+                  <p>1</p>
+                  <input
+                    className="visually-hidden"
+                    type="radio"
+                    value={1}
+                    id="grade"
+                    name="grade"
+                    required
+                    checked={grade === "1"}
+                    onChange={(e) => {
+                      setGrade(e.target.value);
+                    }}
+                  />
+                </label>
+                <label
+                  className={styles.grade_btn_wrap}
+                  style={{
+                    backgroundColor: grade === "2" ? "#2196F3" : "transparent",
+                  }}
+                >
+                  <p>2</p>
+                  <input
+                    className="visually-hidden"
+                    type="radio"
+                    value={2}
+                    id="grade"
+                    name="grade"
+                    required
+                    checked={grade === "2"}
+                    onChange={(e) => {
+                      setGrade(e.target.value);
+                    }}
+                  />
+                </label>
+                <label
+                  className={styles.grade_btn_wrap}
+                  style={{
+                    backgroundColor: grade === "3" ? "#2196F3" : "transparent",
+                  }}
+                >
+                  <p>3</p>
+                  <input
+                    className="visually-hidden"
+                    type="radio"
+                    value={3}
+                    id="grade"
+                    name="grade"
+                    required
+                    checked={grade === "3"}
+                    onChange={(e) => {
+                      setGrade(e.target.value);
+                    }}
+                  />
+                </label>
+                <label
+                  className={styles.grade_btn_wrap}
+                  style={{
+                    backgroundColor: grade === "4" ? "#2196F3" : "transparent",
+                  }}
+                >
+                  <p>4</p>
+                  <input
+                    className="visually-hidden"
+                    type="radio"
+                    value={4}
+                    id="grade"
+                    name="grade"
+                    required
+                    checked={grade === "4"}
+                    onChange={(e) => {
+                      setGrade(e.target.value);
+                    }}
+                  />
+                </label>
+                <label
+                  className={styles.grade_btn_wrap}
+                  style={{
+                    backgroundColor: grade === "5" ? "#2196F3" : "transparent",
+                  }}
+                >
+                  <p>5</p>
+                  <input
+                    className="visually-hidden"
+                    type="radio"
+                    value={5}
+                    id="grade"
+                    name="grade"
+                    required
+                    checked={grade === "5"}
+                    onChange={(e) => {
+                      setGrade(e.target.value);
+                    }}
+                  />
+                </label>
+              </div>
             </div>
-            {errors.grade && <p>Поставте оцінку</p>}
 
-            <button className={styles.submit_btn} type="submit">
-              Зберегти
+            <button
+              className={styles.submit_btn}
+              type="submit"
+              aria-disabled={pending}
+            >
+              {state.loading ? (
+                <Watch
+                  height="40"
+                  width="40"
+                  radius="35"
+                  color="#ffffff"
+                  ariaLabel="watch-loading"
+                  wrapperStyle={{}}
+                  visible={true}
+                />
+              ) : (
+                <span className={styles.submit_btn_text}>Зберегти</span>
+              )}
             </button>
+
+            {state.message && (
+              <div className={styles.notification_box}>
+                <p
+                  aria-live="polite"
+                  className={styles.notification_text}
+                  role="status"
+                >
+                  {state?.message}
+                </p>
+              </div>
+            )}
           </form>
         </div>
       )}

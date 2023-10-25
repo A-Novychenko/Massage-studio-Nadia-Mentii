@@ -10,6 +10,12 @@
 
 .item {
   margin-bottom: 40px;
+
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
 }
 
 .comment_box {

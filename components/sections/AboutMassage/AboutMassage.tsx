@@ -58,12 +58,14 @@ export const AboutMassageSection = async () => {
                     <h3 className={styles.subtitle}>{title}</h3>
                     <p className={styles.descr}>{hendleText(description)}</p>
 
-                    <Link className={styles.link_more} href="">
+                    <div className={styles.link_more}>
+                      {/* <Link className={styles.link_more} href=""> */}
                       <span className={styles.link_more_text}>
                         прочитати більше
                       </span>
                       <BsArrowUpRight size={16} color="#2196F3" />
-                    </Link>
+                      {/* </Link> */}
+                    </div>
                   </div>
                 </li>
               );

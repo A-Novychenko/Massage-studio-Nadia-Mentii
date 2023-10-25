@@ -24,6 +24,8 @@
 }
 
 .add_slide_box {
+  position: relative;
+
   border: 1px solid #949494;
   border-radius: 12px;
 }
@@ -45,6 +47,8 @@
   cursor: pointer;
 
   transition: color var(--animation);
+
+  z-index: 100;
 
   &:hover,
   &:focus {
@@ -90,9 +94,48 @@
   height: 200px;
 }
 
+.grade_box {
+  display: "flex";
+  flex-direction: "column";
+  gap: 10;
+}
+
+.grade_header {
+  display: flex;
+}
+
+.grade_btns {
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  padding: 8px;
+}
+
+.grade_btn_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    border: 1px solid var(--accent-color);
+  }
+}
+
 .submit_btn {
   margin-top: 20px;
-  padding: 8px;
+  // padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   background-color: var(--accent-color);
   border: none;
@@ -112,8 +155,38 @@
   }
 }
 
+.submit_btn_text {
+  padding: 8px;
+}
+
 .requared {
   margin-right: 4px;
 
   color: #ff0000;
+}
+
+.notification_box {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 26, 255, 0.9);
+  border-radius: 12px;
+}
+
+.notification_text {
+  font-size: 20px;
+  @media screen and (min-width: 320px) {
+    font-size: 24px;
+  }
+  @media screen and (min-width: 475px) {
+    font-size: 40px;
+  }
 }
