@@ -66,7 +66,7 @@ export const HeaderSection = () => {
                   href="tel:+380631772223"
                   className={styles.contacts_phone}
                 >
-                  <span style={{marginRight: 8}}>
+                  <span className={styles.phone_icon_wrap}>
                     <SlScreenSmartphone size={30} />
                   </span>
                   063-177-22-23
