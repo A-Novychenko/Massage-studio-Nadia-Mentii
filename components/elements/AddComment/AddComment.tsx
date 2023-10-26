@@ -24,7 +24,6 @@ export const AddComment = () => {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [grade, setGrade] = useState("5");
-  console.log("grade", grade);
 
   const resetForm = () => {
     setName("");

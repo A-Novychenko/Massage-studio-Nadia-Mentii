@@ -47,6 +47,7 @@ export const HeaderSection = () => {
               <br />
               Надії <span className={styles.header__space_hidden}>Ментій</span>
             </Link>
+
             <nav className={styles.nav}>
               <ul className={styles.nav_list}>
                 {links &&
@@ -60,7 +61,7 @@ export const HeaderSection = () => {
               </ul>
             </nav>
 
-            <div>
+            <div className={styles.contacts_box}>
               <div>
                 <Link
                   href="tel:+380631772223"
@@ -105,7 +106,9 @@ export const HeaderSection = () => {
               </ul>
             </div>
 
-            <BurgerMenu />
+            <div>
+              <BurgerMenu />
+            </div>
           </div>
         </div>
       </header>

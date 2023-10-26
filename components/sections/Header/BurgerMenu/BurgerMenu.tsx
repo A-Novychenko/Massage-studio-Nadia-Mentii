@@ -3,6 +3,7 @@
 import {useState} from "react";
 import {AiOutlineClose} from "react-icons/ai";
 import {GiHamburgerMenu} from "react-icons/gi";
+import {FaInstagram} from "react-icons/fa";
 import {SlScreenSmartphone} from "react-icons/sl";
 
 import styles from "./BurgerMenu.module.scss";
@@ -56,7 +57,7 @@ export const BurgerMenu = () => {
 
       {isOpen && (
         <div className={styles.mobile_menu}>
-          <div className={styles.menu_container}>
+          <div className={styles.mobile_menu_container}>
             <button
               type="button"
               className={styles.close_btn}
@@ -71,7 +72,13 @@ export const BurgerMenu = () => {
                 {links &&
                   links.map(({title, href}, i) => (
                     <li key={i}>
-                      <Link href={href} className={styles.mobil_menu_link}>
+                      <Link
+                        href={href}
+                        className={styles.mobile_menu_link}
+                        onClick={() => {
+                          setIsOpen(false);
+                        }}
+                      >
                         {title}
                       </Link>
                     </li>
@@ -79,7 +86,7 @@ export const BurgerMenu = () => {
               </ul>
             </div>
 
-            <div className="mobile-menu__wrapper">
+            <div>
               <div className={styles.mobile_menu_contacts_item}>
                 <Link
                   href="tel:+380631772223"
@@ -89,20 +96,14 @@ export const BurgerMenu = () => {
                   063-177-22-23
                 </Link>
               </div>
-              <div className="mobile-menu__contacts-item">
-                <a
+              <div className={styles.mobile_menu_contacts_item}>
+                <Link
                   href="https://www.instagram.com/nm_massagekiev/"
-                  className="mobile-menu__social-link link"
+                  className={styles.mobile_menu_social_link}
                 >
-                  <svg
-                    className="header-icon smartphone-icon"
-                    width="30"
-                    height="30"
-                  >
-                    <use href="./img/sprite.svg#icon-instagram"></use>
-                  </svg>
+                  <FaInstagram size={30} />
                   Instagram
-                </a>
+                </Link>
               </div>
             </div>
           </div>
