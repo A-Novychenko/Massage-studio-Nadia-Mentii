@@ -1,6 +1,8 @@
 .wrap {
   padding-top: 50px;
   padding-bottom: 50px;
+  position: relative;
+  z-index: 0;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -13,13 +15,13 @@
 }
 
 .goole_map {
+  display: block;
   width: 100%;
   max-width: 432px;
   height: 150px;
+
   border-radius: 10px;
-
-  display: block;
-
+  
   @media screen and (max-width: 767px) {
     margin-bottom: 20px;
     margin-right: auto;
