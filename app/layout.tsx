@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="uk">
+      <meta name="google-site-verification" content="t6eVypW-eeO633tkfsKxcpI-oB0AnUwDjH8XOsTfG_0" />
       <body className={roboto.className}>
         <HeaderSection />
         {children}
