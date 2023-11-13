@@ -1,8 +1,8 @@
 "use client";
 
-import React, {useState} from "react";
-import {useForm, Controller} from "react-hook-form";
-import {BsUpload} from "react-icons/bs";
+import React, { useState } from "react";
+import { useForm, Controller } from "react-hook-form";
+import { BsUpload } from "react-icons/bs";
 
 import styles from "./UploadImg.module.scss";
 
@@ -24,8 +24,8 @@ const InputFile = React.forwardRef<HTMLInputElement, InputFileProps>(
 
 InputFile.displayName = "InputFile";
 
-export const AdminUploadImg = ({setImgLink}: AdminUploadImgProps) => {
-  const {handleSubmit, control, reset} = useForm<FormData>();
+export const AdminUploadImg = ({ setImgLink }: AdminUploadImgProps) => {
+  const { handleSubmit, control, reset } = useForm<FormData>();
 
   const [file, setFile] = useState<File>();
 
@@ -39,17 +39,16 @@ export const AdminUploadImg = ({setImgLink}: AdminUploadImgProps) => {
     formData.append("file", file);
 
     try {
-      // const response = await fetch("/api/upload-cloudinary", {
-      const response = await fetch(
-        `${process.env.BASE_HOST}/api/upload-cloudinary`,
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      const response = await fetch("/api/upload-cloudinary", {
+        // const response = await fetch(
+        //   `${process.env.BASE_HOST}/api/upload-cloudinary`,
+        //   {
+        method: "POST",
+        body: formData,
+      });
 
       if (response.ok) {
-        const {results} = await response.json();
+        const { results } = await response.json();
 
         setImgLink(results.secure_url);
         setFile(undefined);
@@ -86,7 +85,9 @@ export const AdminUploadImg = ({setImgLink}: AdminUploadImgProps) => {
           </span>
           <span
             className={styles.label_text}
-            style={{color: typeof file === "undefined" ? "#ffffff" : "#00e41e"}}
+            style={{
+              color: typeof file === "undefined" ? "#ffffff" : "#00e41e",
+            }}
           >
             {typeof file === "undefined" ? "Виберіть файл " : file.name}
           </span>
@@ -96,7 +97,7 @@ export const AdminUploadImg = ({setImgLink}: AdminUploadImgProps) => {
               name="file"
               control={control}
               defaultValue={undefined}
-              render={({field: {onChange}}) => (
+              render={({ field: { onChange } }) => (
                 <InputFile onChange={handleOnChange} ref={inputRef} />
               )}
             />

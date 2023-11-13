@@ -1,6 +1,13 @@
+import { OurSpecialistsList } from "@/components/sections/Specialists/Specialists";
+
 export default function AboutPage() {
   return (
     <>
+      <OurSpecialistsList />
+      <br />
+      <br />
+      <br />
+      <br />
       <section className="about-me-page section">
         <h1 className="visually-hidden">про мене</h1>
         <div className="about-me-content container">

@@ -1,6 +1,6 @@
 "use client";
 
-import {useForm, SubmitHandler} from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 import styles from "./ReviewsForm.module.scss";
 
@@ -14,7 +14,7 @@ export const AdminReviewsForm = () => {
   const {
     register,
     handleSubmit,
-    formState: {errors},
+    formState: { errors },
     reset,
   } = useForm<IFormInput>();
 
@@ -22,14 +22,14 @@ export const AdminReviewsForm = () => {
     console.log(data);
 
     try {
-      const res = await fetch(`${process.env.BASE_HOST}api/reviews`, {
-        // const res = await fetch("api/reviews", {
+      // const res = await fetch(`${process.env.BASE_HOST}api/reviews`, {
+      const res = await fetch("api/reviews", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         mode: "no-cors",
-        body: JSON.stringify({...data, date: Date.now().toString()}),
+        body: JSON.stringify({ ...data, date: Date.now().toString() }),
       });
 
       reset();
@@ -48,7 +48,7 @@ export const AdminReviewsForm = () => {
           </label>
           <input
             className={styles.input}
-            {...register("name", {required: true})}
+            {...register("name", { required: true })}
           />
           {errors.name && <p role="alert">{errors.name.message}</p>}
         </div>
@@ -59,18 +59,18 @@ export const AdminReviewsForm = () => {
           </label>
           <input
             className={styles.input}
-            {...register("comment", {required: true})}
+            {...register("comment", { required: true })}
           />
           {errors.comment && <p role="alert">{errors.comment.message}</p>}
         </div>
 
-        <div style={{display: "flex", flexDirection: "row", gap: 10}}>
+        <div style={{ display: "flex", flexDirection: "row", gap: 10 }}>
           <span className={styles.requared}>*</span>
           <p> Оцінка</p>
           <label>
             <p>1</p>
             <input
-              {...register("grade", {required: true})}
+              {...register("grade", { required: true })}
               type="radio"
               value={1}
             />
@@ -78,7 +78,7 @@ export const AdminReviewsForm = () => {
           <label>
             <p>2</p>
             <input
-              {...register("grade", {required: true})}
+              {...register("grade", { required: true })}
               type="radio"
               value={2}
             />
@@ -86,7 +86,7 @@ export const AdminReviewsForm = () => {
           <label>
             <p>3</p>
             <input
-              {...register("grade", {required: true})}
+              {...register("grade", { required: true })}
               type="radio"
               value={3}
             />
@@ -94,7 +94,7 @@ export const AdminReviewsForm = () => {
           <label>
             <p>4</p>
             <input
-              {...register("grade", {required: true})}
+              {...register("grade", { required: true })}
               type="radio"
               value={4}
             />
@@ -102,7 +102,7 @@ export const AdminReviewsForm = () => {
           <label>
             <p>5</p>
             <input
-              {...register("grade", {required: true})}
+              {...register("grade", { required: true })}
               type="radio"
               value={5}
             />

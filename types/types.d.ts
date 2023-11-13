@@ -86,3 +86,12 @@ type NewsDetailPageProps = {
     _id: number;
   };
 };
+
+type SpecialistsData = {
+  _id: string;
+  name: string;
+  summary: string;
+  info: string;
+  photoLink: string;
+  сertificateLink: string;
+};
