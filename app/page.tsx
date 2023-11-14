@@ -1,10 +1,10 @@
-import {BannerSection} from "@/components/sections/Banner/BannerSection";
-import {SessionsSection} from "@/components/sections/Sessions/Sessions";
-import {ReviewsSection} from "@/components/sections/Reviews/Reviews";
-import {AboutMassageSection} from "@/components/sections/AboutMassage/AboutMassage";
-import {PriceSection} from "@/components/sections/Price/Price";
-import {PriceModalProvider} from "@/components/Providers/PriceModalProvider";
-import {ContactSection} from "@/components/sections/Contact/Contact.module";
+import { BannerSection } from "@/components/sections/MainPage/Banner/BannerSection";
+import { SessionsSection } from "@/components/sections/MainPage/Sessions/Sessions";
+import { ReviewsSection } from "@/components/sections/MainPage/Reviews/Reviews";
+import { AboutMassageSection } from "@/components/sections/MainPage/AboutMassage/AboutMassage";
+import { PriceSection } from "@/components/sections/MainPage/Price/Price";
+import { PriceModalProvider } from "@/components/Providers/PriceModalProvider";
+import { ContactSection } from "@/components/sections/MainPage/Contact/Contact.module";
 
 export default function Home() {
   return (

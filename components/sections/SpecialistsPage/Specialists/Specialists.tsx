@@ -25,7 +25,7 @@ export const OurSpecialistsList = async () => {
   const data = res?.documents ? res?.documents : initialData;
 
   return (
-    <div className={styles.section}>
+    <section className={styles.section}>
       <div className="container">
         <ul className={styles.wrap}>
           {data &&
@@ -40,29 +40,30 @@ export const OurSpecialistsList = async () => {
               }: SpecialistsData) => {
                 return (
                   <li key={_id} className={styles.card}>
-                    <h3 className={styles.subtitle}>{name}</h3>
+                    <h2 className={styles.name}>{name}</h2>
                     <div className={styles.content_box}>
-                      <div className={styles.img_wrap}>
+                      <div className={styles.photo_wrap}>
                         <Image
+                          className={styles.photo}
                           src={photoLink}
                           alt={name}
-                          width={1296}
-                          height={600}
-                          className={styles.img}
+                          width={500}
+                          height={500}
                         />
                       </div>
-                      <p className={styles.descr}>{summary}</p>
-
-                      <div className={styles.img_wrap}>
+                      <p className={styles.summary}>{summary}</p>
+                    </div>
+                    <div className={styles.additional_info_box}>
+                      <p className={styles.additional_info_text}>{info}</p>
+                      <div className={styles.certificate_wrap}>
                         <Image
+                          className={styles.certificate}
                           src={сertificateLink}
                           alt={`${name} certificate`}
-                          width={1296}
-                          height={600}
-                          className={styles.img}
+                          width={300}
+                          height={250}
                         />
                       </div>
-                      <p className={styles.descr}>{info}</p>
                     </div>
                   </li>
                 );
@@ -70,6 +71,6 @@ export const OurSpecialistsList = async () => {
             )}
         </ul>
       </div>
-    </div>
+    </section>
   );
 };
