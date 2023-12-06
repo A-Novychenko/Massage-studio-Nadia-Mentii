@@ -1,8 +1,9 @@
 import Image from "next/image";
 
-import { mongoApi } from "@/services/mongoApi";
+import {mongoApi} from "@/services/mongoApi";
 
 import styles from "./Specialists.module.scss";
+import {Certifacate} from "@/components/elements/Certifacate/Certifacate";
 
 export const OurSpecialistsList = async () => {
   const initialData = [
@@ -53,7 +54,9 @@ export const OurSpecialistsList = async () => {
                       </div>
                       <p className={styles.summary}>{summary}</p>
                     </div>
-                    <div className={styles.additional_info_box}>
+                    <Certifacate сertificateLink={сertificateLink} />
+
+                    {/* <div className={styles.additional_info_box}>
                       <p className={styles.additional_info_text}>{info}</p>
                       <div className={styles.certificate_wrap}>
                         <Image
@@ -64,7 +67,7 @@ export const OurSpecialistsList = async () => {
                           height={250}
                         />
                       </div>
-                    </div>
+                    </div> */}
                   </li>
                 );
               }
