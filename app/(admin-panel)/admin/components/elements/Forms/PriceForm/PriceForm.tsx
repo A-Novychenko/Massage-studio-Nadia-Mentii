@@ -20,8 +20,7 @@ export const AdminPriceForm = () => {
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     try {
-      const res = await fetch(`${process.env.BASE_HOST}api/prices`, {
-        // const res = await fetch("api/prices", {
+      const res = await fetch(`/api/prices`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
