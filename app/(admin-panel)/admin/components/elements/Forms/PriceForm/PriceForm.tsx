@@ -49,6 +49,8 @@ export const AdminPriceForm = () => {
           {errors.service && <p role="alert">{errors.service.message}</p>}
         </div>
 
+        {/* test push to github */}
+
         <div className={styles.input_container}>
           <label className={styles.input_label}>
             <span className={styles.requared}>*</span>Тривалість
