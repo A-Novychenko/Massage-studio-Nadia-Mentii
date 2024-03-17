@@ -25,8 +25,8 @@ export const AdminSlidesForm = () => {
     console.log(data);
 
     try {
-      const res = await fetch(`${process.env.BASE_HOST}api/slides`, {
-        // const res = await fetch("api/slides", {
+      // const res = await fetch(`${process.env.BASE_HOST}api/slides`, {
+      const res = await fetch("api/slides", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
